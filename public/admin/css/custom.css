@@ -1,1 +1,9 @@
 /* your styles go here */
+trix-toolbar .trix-button:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
+trix-editor.is-invalid {
+        border: 1px solid rgb(248, 84, 84);
+        border-radius: 4px;
+    }

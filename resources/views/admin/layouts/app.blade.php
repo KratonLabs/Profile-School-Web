@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="{{asset('admin/css/style.default.css')}}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
+
+    <link rel="stylesheet" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('admin/img/favicon.ico')}}">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -33,17 +37,12 @@
       @include('admin.layouts.sidebar')
       <!-- Sidebar Navigation end-->
       <div class="page-content">
-        <div class="page-header">
-          <div class="container-fluid">
-            <h2 class="h5 no-margin-bottom">Dashboard</h2>
-          </div>
-        </div>
-        <div class="container-fluid">
-            @yield('content')
-        </div>
+        @yield('content')
         @include('admin.layouts.footer')
       </div>
     </div>
+
+    @include('admin.alert.sweetalert')
     <!-- JavaScript files-->
     <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendor/popper.js/umd/popper.min.js')}}"> </script>
@@ -53,5 +52,7 @@
     <script src="{{asset('admin/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
     <script src="{{asset('admin/js/charts-home.js')}}"></script>
     <script src="{{asset('admin/js/front.js')}}"></script>
+    <script src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+
   </body>
 </html>

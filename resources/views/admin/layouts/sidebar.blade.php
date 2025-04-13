@@ -1,30 +1,56 @@
 <nav id="sidebar">
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
-          <div class="avatar"><img src="img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
+          <div class="avatar"><img src="admin/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
             <h1 class="h5">Mark Stephen</h1>
-            <p>Web Designer</p>
+            <p>Admin</p>
           </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-                <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-                <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
-                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                  </ul>
-                </li>
-                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
-        </ul><span class="heading">Extras</span>
-        <ul class="list-unstyled">
-          <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-chart"></i>Demo </a></li>
-        </ul>
+
+          <li class="{{ request()->is('/') ? 'active' : '' }}">
+              <a href="/dashboard"> <i class="icon-home"></i>Home </a>
+          </li>
+      
+          {{-- Pegawai Dropdown --}}
+          @php
+              $pegawaiActive = request()->is('pegawai*') || request()->is('jabatan*') || request()->is('mata-pelajaran*');
+          @endphp
+          <li>
+              <a href="#exampledropdownDropdown" aria-expanded="{{ $pegawaiActive ? 'true' : 'false' }}"
+                 data-toggle="collapse" class="{{ $pegawaiActive ? '' : 'collapsed' }}">
+                 <i class="fa fa-user-plus"></i>Pegawai
+              </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled {{ $pegawaiActive ? 'show' : '' }}">
+                  <li class="{{ request()->is('pegawai*') ? 'active' : '' }}">
+                      <a href="/pegawai"><i class="fa fa-users"></i>Guru & Staff</a>
+                  </li>
+                  <li class="{{ request()->is('jabatan*') ? 'active' : '' }}">
+                      <a href="/jabatan"><i class="fa fa-black-tie"></i>Jabatan</a>
+                  </li>
+                  <li class="{{ request()->is('mata-pelajaran*') ? 'active' : '' }}">
+                      <a href="/mata-pelajaran"><i class="fa fa-book"></i>Mata Pelajaran</a>
+                  </li>
+              </ul>
+          </li>
+      
+          <li class="{{ request()->is('jurusan*') ? 'active' : '' }}">
+              <a href="/jurusan"> <i class="fa fa-gear"></i>Jurusan </a>
+          </li>
+      
+          <li class="{{ request()->is('ekstrakulikuler*') ? 'active' : '' }}">
+              <a href="/ekstrakulikuler"> <i class="fa fa-puzzle-piece"></i>Ekstrakulikuler </a>
+          </li>
+      
+          <li class="{{ request()->is('fasilitas*') ? 'active' : '' }}">
+              <a href="/fasilitas"> <i class="fa fa-building"></i>Fasilitas </a>
+          </li>
+      
+          <li class="{{ request()->is('berita*') ? 'active' : '' }}">
+              <a href="/berita"> <i class="fa fa-newspaper-o"></i>Berita </a>
+          </li>
+      
+      </ul>      
       </nav>
