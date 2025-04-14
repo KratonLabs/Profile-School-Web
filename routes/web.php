@@ -13,6 +13,11 @@ use App\Http\Controllers\PegawaiController;
 Route::get('/', function () {
     return view('layouts.home');
 });
+Route::get('/home', function () {
+    return view('user.index');
+});
+// Route::get('/test', function () {return view('user.test');});
+Route::get('/test', [JurusanController::class, 'test']);
 
 Route::get('/login', function () {return view('admin.login');})->name('login');
 Route::post('/login', [LoginController::class, 'login']);

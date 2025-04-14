@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Mews\Purifier\Facades\Purifier;
 
 class JurusanController extends Controller
 {
@@ -17,6 +19,14 @@ class JurusanController extends Controller
         $jurusan=Jurusan::all();
         return view('admin.jurusan.index', compact('jurusan'));
     }
+
+    public function test()
+    {
+        $data = Jurusan::where('nama','Ilmu Pengetahuan Alam (IPA)')->first();
+        $cleanDeskripsi = Purifier::clean($data->deskripsi);
+        return view('user.test', compact('cleanDeskripsi'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
