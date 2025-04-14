@@ -32,4 +32,9 @@ class Pegawai extends Model
     {
         return $this->belongsTo(MataPelajaran::class);
     }
+
+    public function ekstrakulikuler()
+    {
+        return $this->hasMany(Ekstrakurikuler::class);
+    }
 }

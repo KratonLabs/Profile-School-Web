@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama'); 
+            $table->text('deskripsi'); 
+            $table->enum('jenis', ['Akademik', 'Non-Akademik', 'Keorganisasian','Umum']);
+            $table->string('gambar');
             $table->timestamps();
         });
     }

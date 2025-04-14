@@ -2,7 +2,7 @@
 @section('content')
     <div class="page-header">
         <div class="container-fluid">
-            <h2 class="h5 no-margin-bottom">Jabatan</h2>
+            <h2 class="h5 no-margin-bottom">Jurusan</h2>
         </div>
     </div>
     <div class="container-fluid">
@@ -30,19 +30,18 @@
                     @foreach ($jurusan as $item)
                         <div class="col-lg-4">
                             <div class="user-block block text-center">
-                                <div class="avatar"><img src="{{ asset('img/jurusan/' . $item->gambar) }}" alt="..."
-                                        class="img-fluid">
+                                <div class=""><img src="{{ asset('img/jurusan/' . $item->gambar) }}" alt="..."
+                                        class="img-fluid" style="width: 2500px; height: 150px; object-fit: cover;">
                                 </div><a href="#" class="user-title">
                                     <h3 class="h5">{{ $item->nama }}</h3>
                                 </a>
-                                    <div class="contributions">{{ $item->deskripsi }}</div>
                                 <div class="details row">
                                     <div class="col">
                                         <a href="{{ route('jurusan.edit', $item->id) }}"
                                             class="btn btn-lg btn-warning h5"><i class="fa fa-pencil-square"></i> Update</a>
                                     </div>
                                     <div class="col">
-                                        <a type="button" data-toggle="modal" data-target="#myModal{{ $item->id }}"
+                                        <a type="button" data-toggle="modal" data-target="#myJurusan{{ $item->id }}"
                                             class="btn btn-lg btn-danger h5"><i class="fa fa-trash"></i> Hapus</a>
                                     </div>
                                     @include('admin.jurusan.confirmdelete')

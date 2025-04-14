@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class BeritaController extends Controller
 {
@@ -12,7 +14,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        $berita=Berita::all();
+        return view('admin.berita.index', compact('berita'));
     }
 
     /**
@@ -20,15 +23,56 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.berita.create');
     }
+    
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'judul' => 'required|string|max:255',
+            'kategori' => 'required|in:Pengumuman,Kegiatan,Prestasi',
+            'deskripsi' => 'required|string',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+        
+            // Ambil ekstensi file (misalnya jpg, png)
+            $extension = $file->getClientOriginalExtension();
+        
+            // Ubah nama menjadi: nama-jurusan.jpg
+            $namaBerita = Str::slug($request->judul); // Biar aman dan rapi
+            $filename = $namaBerita . '.' . $extension;
+        
+            // Simpan file ke folder public/img/jurusan
+            $file->move(public_path('img/berita'), $filename);
+        
+            // Simpan nama file ke dalam database
+            $validated['gambar'] = $filename;
+        }
+    
+        $berita = new Berita($validated);
+    
+        if ($berita->save()) {
+            session()->flash('swal', [
+                'title' => 'Berhasil!',
+                'text' => 'Data Berita berhasil ditambahkan.',
+                'icon' => 'success'
+            ]);
+        } else {
+            session()->flash('swal', [
+                'title' => 'Gagal!',
+                'text' => 'Gagal menambahkan data.',
+                'icon' => 'error'
+            ]);
+        }
+    
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -42,24 +86,84 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berita $berita)
+    public function edit($id)
     {
-        //
+        $data = Berita::find($id);
+        return view('admin.berita.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, $id)
     {
-        //
+        $berita = Berita::findOrFail($id);
+
+        $validated = $request->validate([
+            'judul' => 'required|string|max:255',
+            'kategori' => 'required|in:Pengumuman,Kegiatan,Prestasi',
+            'deskripsi' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        // Proses upload gambar baru jika ada
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama
+            if ($berita->gambar && File::exists(public_path('img/berita/' . $berita->gambar))) {
+                File::delete(public_path('img/berita/' . $berita->gambar));
+            }
+    
+            $file = $request->file('gambar');
+            $filename = $request->judul . '.jpg'; // atau bisa pakai time() jika ingin unik
+            $file->move(public_path('img/berita'), $filename);
+            $validated['gambar'] = $filename;
+        }
+    
+        // Update data
+        if ($berita->update($validated)) {
+            session()->flash('swal', [
+                'title' => 'Berhasil!',
+                'text' => 'Data Berita berhasil diupdate.',
+                'icon' => 'success'
+            ]);
+        } else {
+            session()->flash('swal', [
+                'title' => 'Gagal!',
+                'text' => 'Gagal meng-update data.',
+                'icon' => 'error'
+            ]);
+        }
+    
+        return redirect()->route('berita.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy($id)
     {
-        //
+        $berita = Berita::findOrFail($id);
+
+        // Hapus gambar dari folder jika ada
+        if ($berita->gambar && File::exists(public_path('img/berita/' . $berita->gambar))) {
+            File::delete(public_path('img/berita/' . $berita->gambar));
+        }
+
+        // Hapus data dari database
+        if ($berita->delete()) {
+            session()->flash('swal', [
+                'title' => 'Berhasil!',
+                'text' => 'Data Berita berhasil dihapus.',
+                'icon' => 'success'
+            ]);
+        } else {
+            session()->flash('swal', [
+                'title' => 'Gagal!',
+                'text' => 'Gagal menghapus data.',
+                'icon' => 'error'
+            ]);
+        }
+
+        return redirect()->route('berita.index');
     }
 }

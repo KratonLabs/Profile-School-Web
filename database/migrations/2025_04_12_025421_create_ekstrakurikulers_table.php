@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('ekstrakurikulers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('pegawai_id')->nullable();
+            $table->string('nama'); 
+            $table->text('deskripsi'); 
+            $table->integer('jumlah_anggota')->default(0);
+            $table->string('gambar');
             $table->timestamps();
+
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('set null');
         });
     }
 

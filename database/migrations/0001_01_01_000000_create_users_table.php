@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('email')->unique(); // digunakan untuk login
+            $table->string('password');        // digunakan untuk login
+            $table->string('gambar'); // kolom untuk menyimpan gambar user (optional)
             $table->rememberToken();
             $table->timestamps();
         });

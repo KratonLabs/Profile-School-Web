@@ -5,7 +5,7 @@
 @endphp
     <div class="page-header">
         <div class="container-fluid">
-            <h2 class="h5 no-margin-bottom">Jabatan</h2>
+            <h2 class="h5 no-margin-bottom">Mata Pelajaran</h2>
         </div>
     </div>
     <div class="container-fluid">

@@ -22,7 +22,7 @@
           <div class="right-menu list-inline no-margin-bottom">    
             <div class="list-inline-item"><a href="#" class="search-open nav-link"><i class="icon-magnifying-glass-browser"></i></a></div>
             <!-- Log out               -->
-            <div class="list-inline-item logout"><a id="logout" href="login.html" class="nav-link">Logout <i class="icon-logout"></i></a></div>
+            <div class="list-inline-item logout"><a id="logout" href="/logout" class="nav-link">Logout <i class="icon-logout"></i></a></div>
           </div>
         </div>
       </nav>
