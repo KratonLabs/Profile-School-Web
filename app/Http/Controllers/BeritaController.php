@@ -166,4 +166,12 @@ class BeritaController extends Controller
 
         return redirect()->route('berita.index');
     }
+
+
+    public function berita_user()
+    {
+         // $jurusan=Jurusan::all();
+         $berita=Berita::all();
+         return view('users.berita.index', compact('berita'));
+    }
 }

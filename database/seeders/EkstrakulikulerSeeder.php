@@ -46,5 +46,12 @@ class EkstrakulikulerSeeder extends Seeder
             'jumlah_anggota' => 50,
             'gambar' => 'Jurnalistik.jpg'
         ]);
+        Ekstrakurikuler::create([
+            'pegawai_id' => 3,
+            'nama' => 'OSIS',
+            'deskripsi' => 'Organisasi ini berfungsi sebagai wadah bagi siswa',
+            'jumlah_anggota' => '50',
+            'gambar' => 'Osis.jpg'
+        ]);
     }
 }

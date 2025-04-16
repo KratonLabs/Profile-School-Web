@@ -11,6 +11,18 @@ use Mews\Purifier\Facades\Purifier;
 
 class JurusanController extends Controller
 {
+
+    public function jurusan_user()
+    {
+        $jurusan = Jurusan::all();
+        return view('users.jurusan.index', compact('jurusan'));
+    }
+
+    public function jurusan_detail()
+    {
+        $jurusan = Jurusan::all();
+        return view('users.jurusan.detail', compact('jurusan'));
+    }
     /**
      * Display a listing of the resource.
      */

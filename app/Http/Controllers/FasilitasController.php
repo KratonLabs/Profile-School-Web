@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\File;
 
 class FasilitasController extends Controller
 {
+    public function fasilitas_user()
+    {
+        $fasilitas = Fasilitas::paginate(8);
+        return view('users.sekolah.fasilitas.sarana-prasarana', compact('fasilitas'));
+    }
     /**
      * Display a listing of the resource.
      */

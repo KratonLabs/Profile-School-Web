@@ -11,11 +11,78 @@ use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\PegawaiController;
 
 Route::get('/', function () {
-    return view('layouts.home');
+    return view('users.home.index');
 });
+
 Route::get('/home', function () {
     return view('user.index');
 });
+
+//Sekolah
+
+//--Profil Sekolah
+Route::get('/sejarah', function () {
+    return view('users.sekolah.profile-sekolah.sejarah');
+});
+
+Route::get('/visi-misi', function () {
+    return view('users.sekolah.profile-sekolah.visi-misi');
+});
+
+Route::get('/struktur-organisasi', function () {
+    return view('users.sekolah.profile-sekolah.struktur-pengurus');
+});
+
+Route::get('/galery', function () {
+    return view('users.sekolah.profile-sekolah.galery');
+});
+
+Route::get('/program', function () {
+    return view('users.sekolah.profile-sekolah.programsekolah');
+});
+//--Profil Sekolah--
+
+//Guru
+Route::get('/guru', [PegawaiController::class, 'guru']);
+
+//Sarana dan Prasarana
+Route::get('/fasilitas-user', [FasilitasController::class, 'fasilitas_user']);
+Route::get('/fasilitas-item', function () {
+    return view('users.sekolah.fasilitas.detail');
+});
+
+// Jurusan
+Route::get('/jurusan-user', [JurusanController::class, 'jurusan_user']);
+Route::get('/jurusan-detail', [JurusanController::class, 'jurusan_detail']);
+
+
+//Berita
+Route::get('/beritas', function () {
+    return view('users.berita.index');
+});
+
+Route::get('/detail-berita', function () {
+    return view('users.berita.detail');
+});
+
+//Kesiswaan
+//--Ekstrakurikuler
+Route::get('/ekstrakurikuler', function () {
+    return view('users.kesiswaan.eskul.eskul');
+});
+
+Route::get('/ekskul-detail', function () {
+    return view('users.kesiswaan.eskul.detail');
+});
+// Organisasi
+Route::get('/organisasi', function () {
+    return view('users.kesiswaan.osis.osis');
+});
+
+Route::get('/struktur', function () {
+    return view('users.kesiswaan.osis.struktur');
+});
+
 // Route::get('/test', function () {return view('user.test');});
 Route::get('/test', [JurusanController::class, 'test']);
 

@@ -14,6 +14,14 @@ class PegawaiController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function guru()
+    {
+        $guru = Pegawai::with(['jabatan', 'mataPelajaran'])->paginate(8); // misal 8 per halaman
+        return view('users.sekolah.guru-staff', compact('guru'));
+
+    }
+
+
     public function index()
     {
         $pegawai=Pegawai::all();
