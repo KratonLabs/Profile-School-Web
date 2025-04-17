@@ -4,7 +4,7 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background">
+    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
         <div class="section-title" data-aos="fade-up">
             <h2>Kesiswaan</h2>
             <p>Organisasi Intra Sekolah</p>
@@ -65,7 +65,7 @@
   
             <div class="col-lg-8" data-aos="fade-up">
               <div class="portfolio-description">
-                <h2>Paskibra SMA Daan Mogot</h2>
+                <h2>OSIS SMA Daan Mogot</h2>
                 <p>
                   Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
                 </p>
@@ -82,7 +82,7 @@
                   <div>
                     <img src="/selecao/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                     <h3>Sara Wilsson</h3>
-                    <h4>Pembina Paskibra</h4>
+                    <h4>Ketua Osis</h4>
                   </div>
                 </div>
   

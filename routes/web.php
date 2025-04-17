@@ -40,6 +40,16 @@ Route::get('/galery', function () {
 Route::get('/program', function () {
     return view('users.sekolah.profile-sekolah.programsekolah');
 });
+
+Route::get('/jadwal-kbm', function () {
+    return view('users.sekolah.kurikulum.jadwalpelajaran');
+});
+Route::get('/kalender-akademik', function () {
+    return view('users.sekolah.kurikulum.kalender');
+});
+Route::get('/peraturan-sekolah', function () {
+    return view('users.sekolah.kurikulum.peraturan');
+});
 //--Profil Sekolah--
 
 //Guru
@@ -55,7 +65,7 @@ Route::get('/fasilitas-item', function () {
 Route::get('/jurusan-user', [JurusanController::class, 'jurusan_user']);
 Route::get('/jurusan-detail', [JurusanController::class, 'jurusan_detail']);
 
-
+//Berita
 Route::get('/beritas',[BeritaController::class, 'berita_user'])->name('beritas.kategori');
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail.berita');
 
@@ -63,6 +73,9 @@ Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail.beri
 //--Ekstrakurikuler
 Route::get('/ekstrakurikuler',[EkstrakurikulerController::class, 'ekstrakulikuler_user']);
 Route::get('/detail/{id}/ekstrakurikuler',[EkstrakurikulerController::class, 'detail_ekstrakulikuler_user']);
+Route::get('/struktur-eskul', function () {
+    return view('users.kesiswaan.eskul.struktur');
+});
 
 // Organisasi
 Route::get('/organisasi', function () {

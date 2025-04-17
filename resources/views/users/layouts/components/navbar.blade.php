@@ -15,9 +15,9 @@
         <li><a href="/guru">Guru dan Staff</a></li>
         <li class="dropdown"><a href="#"><span>Kurikulum</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="#">Kalender Pendidikan</a></li>
-            <li><a href="#">Jadwal Kegiatan Belajar</a></li>
-            <li><a href="#">Peraturan Sekolah</a></li>
+            <li><a href="/jadwal-kbm">Jadwal Kegiatan Belajar</a></li>
+            <li><a href="/kalender-akademik">Kalender Pendidikan</a></li>
+            <li><a href="/peraturan-sekolah">Peraturan Sekolah</a></li>
           </ul>
         </li>
         <li><a href="/fasilitas-user">Sarana Prasarana</a></li>

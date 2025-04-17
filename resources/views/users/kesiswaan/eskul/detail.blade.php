@@ -113,6 +113,7 @@
                       <i class="bi bi-link-45deg"></i> <strong>Form Pendaftaran:</strong> 
                       <a href="https://bit.ly/daftar-pramuka" target="_blank">Klik di sini</a>
                     </li>
+                    <li><a href="/struktur-eskul" class="btn-visit align-self-start">Struktur Pengurus</a></li>
                   </ul>
                 </div>
               </div>

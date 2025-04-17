@@ -1,7 +1,7 @@
 @extends('users.layouts.app')
 @section('content')
 <main class="main"> 
-    <div class="page-title dark-background" style="background: url('/gp/assets/img/features-bg.jpg') center center/cover no-repeat; z-index: 1;">
+    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
         <div class="section-title" data-aos="fade-up">
             <h2>Sekolah</h2>
             <p>Guru dan Staff</p>
@@ -16,8 +16,8 @@
         <div class="container">
             <div class="row gy-4">
                 @foreach ($guru as $item)
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}" >
-                    <div class="team-member shadow-lg rounded">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
+                    <div class="team-member shadow-lg rounded d-flex flex-column">
                         <div class="member-img position-relative">
                             <img src="{{ asset('img/pegawai/' . $item->gambar) }}" class="img-fluid rounded-top" style="height: 250px; object-fit: cover;" alt="{{ $item->nama }}">
                             <div class="social">
@@ -26,16 +26,23 @@
                                 <a href="#"><i class="bi bi-instagram"></i></a>
                             </div>
                         </div>
-                        <div class="member-info text-center p-3">
-                            <h5 class="fw-bold">{{ $item->nama }}</h5>
-                            <p class="mb-1"><i class="bi bi-card-heading me-1 text-primary"></i>NIP: {{ $item->nip }}</p>
+                        <div class="member-info p-3 mt-auto" style="background-color: #e91d1d; border-top: 4px solid #f8e807;">
+                            <h5 class="fw-bold text-white text-center p-2">{{ $item->nama }}</h5>
+                            <p class="mb-1 text-white p-2">
+                                <i class="bi bi-card-heading me-1 text-warning"></i>NIP: {{ $item->nip }}
+                            </p>
                             @if ($item->jabatan_id == 1)
-                            <p class="mb-1"><i class="bi bi-mortarboard-fill me-1 text-dark"></i>Mapel: {{ $item->mataPelajaran->nama }}</p>
+                                <p class="mb-1 text-white p-2">
+                                    <i class="bi bi-mortarboard-fill me-1 text-warning"></i>Mapel: {{ $item->mataPelajaran->nama }}
+                                </p>
                             @endif
-                            <p><i class="bi bi-award-fill me-1 text-dark"></i>Jabatan: {{ $item->jabatan->nama ?? '-' }}</p>
+                            <p class="text-white p-2 ">
+                                <i class="bi bi-award-fill me-1 text-warning"></i>Jabatan: {{ $item->jabatan->nama ?? '-' }}
+                            </p>
                         </div>
                     </div>
                 </div>
+                
                 @endforeach
             </div>
         </div>
@@ -51,5 +58,4 @@
     </section>
     <!-- /Blog Pagination Section -->
 </main>
-
 @endsection
