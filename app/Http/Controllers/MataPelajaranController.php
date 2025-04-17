@@ -12,7 +12,7 @@ class MataPelajaranController extends Controller
      */
     public function index()
     {
-        $mata_pelajaran=MataPelajaran::all();
+        $mata_pelajaran=MataPelajaran::paginate(10);
         return view('admin.mata-pelajaran.index', compact('mata_pelajaran'));
     }
 

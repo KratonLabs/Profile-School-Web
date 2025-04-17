@@ -11,7 +11,7 @@ class FasilitasController extends Controller
 {
     public function fasilitas_user()
     {
-        $fasilitas = Fasilitas::paginate(8);
+        $fasilitas = Fasilitas::paginate(6);
         return view('users.sekolah.fasilitas.sarana-prasarana', compact('fasilitas'));
     }
     /**
@@ -19,7 +19,7 @@ class FasilitasController extends Controller
      */
     public function index()
     {
-        $fasilitas=Fasilitas::all();
+        $fasilitas=Fasilitas::paginate(6);
         return view('admin.fasilitas.index', compact('fasilitas'));
     }
 

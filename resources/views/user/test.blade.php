@@ -42,5 +42,11 @@
             {!!  $cleanDeskripsi !!} 
         </div>
 
+        {{-- <div class="m-3 d-flex justify-content-center">
+          <iframe src="{{ asset('doc/Kumpulan SS share poster.pdf') }}" width="85%" height="600px"></iframe>
+        </div> --}}
+
+
     </section><!-- /Starter Section Section -->
+
 @endsection

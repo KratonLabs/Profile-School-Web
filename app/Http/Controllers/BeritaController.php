@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
@@ -14,7 +15,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $berita=Berita::all();
+        $berita=Berita::paginate(6);
         return view('admin.berita.index', compact('berita'));
     }
 
@@ -78,9 +79,16 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita)
+    public function show($id)
     {
-        //
+        $data = Berita::find($id);
+        $berita = Berita::all();
+        $kategoriCounts = Berita::select('kategori')
+        ->groupBy('kategori')
+        ->selectRaw('kategori, COUNT(*) as total')
+        ->get();
+
+        return view('users.berita.detail', compact('data','berita','kategoriCounts'));
     }
 
     /**
@@ -168,10 +176,31 @@ class BeritaController extends Controller
     }
 
 
-    public function berita_user()
+    // public function berita_user()
+    // {
+    //      // $jurusan=Jurusan::all();
+    //      $berita=Berita::all();
+    //      return view('users.berita.index', compact('berita'));
+    // }
+
+    public function berita_user(Request $request)
     {
-         // $jurusan=Jurusan::all();
-         $berita=Berita::all();
-         return view('users.berita.index', compact('berita'));
+
+    $kategori_list = DB::table('beritas')->distinct()->pluck('kategori');
+    $berita = Berita::all();
+
+    $kategoriCounts = Berita::select('kategori')
+        ->groupBy('kategori')
+        ->selectRaw('kategori, COUNT(*) as total')
+        ->get();
+
+    if($request->query('kategori'))
+    {
+        $kategoriAktif = $request->query('kategori'); 
+        return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
+    }else{
+        return view('users.berita.berita', compact('kategori_list', 'berita','kategoriCounts'));
     }
+    }
+
 }

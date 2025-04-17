@@ -66,6 +66,9 @@
                     </div>
                 </div>
             </div>
+            <div class="row mt-4 justify-content-center">
+                {{ $mata_pelajaran->onEachSide(1)->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </section>
 @endsection

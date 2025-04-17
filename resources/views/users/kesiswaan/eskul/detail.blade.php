@@ -7,7 +7,7 @@
     <div class="page-title dark-background">
         <div class="section-title" data-aos="fade-up">
             <h2>Ekstrakulikuler</h2>
-            <p>Nama Eskul</p>
+            <p>{{ $data->nama }}</p>
         </div>
     </div>
     <!-- End Page Title -->
@@ -65,14 +65,12 @@
   
             <div class="col-lg-8" data-aos="fade-up">
               <div class="portfolio-description">
-                <h2>Paskibra SMA Daan Mogot</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                <h2>{{ $data->nama }} SMA Daan Mogot</h2>
+                <p style="text-align:justify;">
+                  {!! $data->deskripsi !!}
                 </p>
-                <p>
-                  Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-                </p>
-  
+
+                @if ($data->pegawai!=null)
                 <div class="testimonial-item">
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
@@ -81,19 +79,11 @@
                   </p>
                   <div>
                     <img src="/selecao/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                    <h3>Sara Wilsson</h3>
-                    <h4>Pembina Paskibra</h4>
+                    <h3> {{ $data->pegawai->nama }}</h3>
+                    <h4>Pembina  {{ $data->nama }}</h4>
                   </div>
                 </div>
-  
-                <p>
-                  Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-                </p>
-  
-                <p>
-                  Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-                </p>
-  
+                @endif
               </div>
             </div>
   
@@ -102,17 +92,22 @@
                   <h3>Profil Eskul</h3>
                   <ul>
                     <li>
-                      <i class="bi bi-person-badge"></i> <strong>Pembina:</strong> Sara Wilson
+                      <i class="bi bi-person-badge"></i> <strong>Pembina:</strong>
+                      @if ($data->pegawai!=null)
+                      {{ $data->pegawai->nama }}
+                      @else
+                      -
+                      @endif
                     </li>
                     <li>
-                      <i class="bi bi-calendar-check"></i> <strong>Tahun Berdiri:</strong> 2015
+                      <i class="bi bi-calendar-check"></i> <strong>Tahun Berdiri:</strong> {{ $data->tahun_berdiri }}
                     </li>
                     <li>
-                      <i class="bi bi-people-fill"></i> <strong>Jumlah Anggota:</strong> 45 siswa
+                      <i class="bi bi-people-fill"></i> <strong>Jumlah Anggota:</strong>  {{ $data->jumlah_anggota }} siswa
                     </li>
                     <li>
                       <i class="bi bi-instagram"></i> <strong>Instagram:</strong> 
-                      <a href="https://instagram.com/eskul_paskibra" target="_blank">@eskul_paskibra</a>
+                      <a href="{{$data->alamat_ig}}" target="_blank">{{$data->nama_ig}}</a>
                     </li>
                     <li>
                       <i class="bi bi-link-45deg"></i> <strong>Form Pendaftaran:</strong> 

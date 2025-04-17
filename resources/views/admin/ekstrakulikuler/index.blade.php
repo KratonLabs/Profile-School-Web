@@ -1,5 +1,68 @@
 @extends('admin.layouts.app')
 @section('content')
+<style>
+.img-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.overlay-btns {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari sedikit lebih atas */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.overlay-btns button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.img-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-popup img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.img-wrapper:hover .overlay-btns {
+    opacity: 1;
+    transform: translateY(0); /* Turun ke posisi normal */
+    pointer-events: auto;
+}
+
+.img-popup .close-btn {
+    background: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    </style>
     <div class="page-header">
         <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">Ekstrakulikuler</h2>
@@ -30,18 +93,41 @@
                     @foreach ($ekstrakulikuler as $item)
                         <div class="col-lg-4">
                             <div class="user-block block text-center">
-                                <div class=""><img src="{{ asset('img/ekstrakulikuler/' . $item->gambar) }}" alt="..."
-                                        class="img-fluid" style="width: 2500px; height: 150px; object-fit: cover;">
+                                <div class="img-wrapper" onclick="openPopup('{{ asset('img/ekstrakulikuler/' . $item->gambar) }}')">
+                                    <img src="{{ asset('img/ekstrakulikuler/' . $item->gambar) }}" alt="..." class="img-fluid"
+                                        style="width: 2500px; height: 150px; object-fit: cover;">
+                                    
+                                    <div class="overlay-btns">
+                                        <!-- Tombol "+" -->
+                                        <button type="button" onclick="event.stopPropagation(); openPopup('{{ asset('img/ekstrakulikuler/' . $item->gambar) }}')" title="Lihat besar">+</button>
+                                
+                                        <!-- Tombol "Logo" -->
+                                        <button type="button" onclick="event.stopPropagation(); openPopup('{{ asset('img/ekstrakulikuler/logo/' . $item->logo) }}')" title="Logo">Logo</button>
+                                    </div>
                                 </div>
-                                @if ($item->pegawai_id)
+                                
+                                <!-- Fullscreen Gambar -->
+                                <div id="imgPopup" class="img-popup" onclick="closePopup()">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closePopup()">Tutup</button>
+                                    <img id="popupImage" src="" alt="Preview Besar">
+                                </div>
+                                
                                 <a href="#" class="user-title">
-                                    <h3 class="h5">{{ $item->nama }}</h3> <span>Pembina : {{$item->pegawai->nama}}</span>
+                                    <h3 class="h5">{{ $item->nama }}</h3>
+                                    @if ($item->pegawai_id)
+                                     <span>Pembina : {{$item->pegawai->nama}}</span>
+                                    @endif
+                                    <span>Kategori : {{$item->kategori}}</span>
+                                    <span>Tahun berdiri : {{$item->tahun_berdiri}}</span>
+                                    @if ($item->nama_ig)
+                                    <a href="{{$item->alamat_ig}}"><span>
+                                        Instagram :
+                                        {{$item->nama_ig}}
+                                    </span>
+                                    </a>
+                                     {{-- <span>Instagram :</span> --}}
+                                    @endif
                                 </a>
-                                @else
-                                <a href="#" class="user-title mb-3 mt-2 pt-1">
-                                    <h3 class="h5 pt-1">{{ $item->nama }}</h3>
-                                </a>
-                                @endif
                                 <div class="contributions">{{$item->jumlah_anggota}} Anggota</div>
                                 <div class="details row">
                                     <div class="col">
@@ -59,6 +145,25 @@
                     @endforeach
                 </div>
             @endif
+            <div class="row mt-4 justify-content-center">
+                {{ $ekstrakulikuler->onEachSide(1)->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </section>
+    <script>
+        function openPopup(imgSrc) {
+            const popup = document.getElementById('imgPopup');
+            const popupImg = document.getElementById('popupImage');
+            popupImg.src = imgSrc;
+            popup.style.display = 'flex';
+        }
+        
+        function closePopup() {
+            const popup = document.getElementById('imgPopup');
+            const popupImg = document.getElementById('popupImage');
+            popup.style.display = 'none';
+            popupImg.src = '';
+        }
+        </script>
+        
 @endsection

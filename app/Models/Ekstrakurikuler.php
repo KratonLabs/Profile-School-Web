@@ -11,9 +11,14 @@ class Ekstrakurikuler extends Model
     protected $fillable = [
         'pegawai_id',
         'nama',
+        'kategori',
         'deskripsi',
+        'tahun_berdiri',
+        'nama_ig',
+        'alamat_ig',
         'jumlah_anggota',
-        'gambar'
+        'gambar',
+        'logo'
     ];
 
     public function pegawai()

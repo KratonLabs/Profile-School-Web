@@ -5,7 +5,7 @@
         <div class="page-title dark-background">
             <div class="section-title" data-aos="fade-up">
                 <h2>Berita Terbaru</h2>
-                <p>Kategori Berita</p>
+                <p>{{ $data->kategori }}</p>
             </div>
         </div>
         <!-- End Page Title -->
@@ -22,60 +22,39 @@
                             <article class="article">
 
                                 <div class="post-img">
-                                    <img src="/selecao/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                                    <img src="{{ asset('img/berita/' . $data->gambar) }}" alt="" class="img-fluid">
                                 </div>
 
-                                <h3 class="title">Judul Berita</h3>
+                                <h3 class="title">{{ $data->judul }}</h3>
 
                                 <div class="meta-top">
                                     <ul>
                                         <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a
-                                                href="blog-details.html">By: John Doe</a></li>
+                                                href="blog-details.html">By: {{ $data->penulis ?? 'Admin' }}</a></li>
                                         <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                                href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2025</time></a>
+                                                href="blog-details.html"><time
+                                                    datetime="{{ $data->created_at }}">{{ $data->created_at->format('M d, Y') }}</time></a>
                                         </li>
                                         <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
-                                            href="blog-details.html"><time datetime="2020-01-01">100 views</time></a>
-                                    </li>
+                                                href="blog-details.html">{{ $data->dilihat }} views</a>
+                                        </li>
                                         <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
                                                 href="blog-details.html">12 Comments</a></li>
                                     </ul>
                                 </div><!-- End meta top -->
 
                                 <div class="content">
-                                    <p>
-                                        Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
-                                        praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                                        Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta.
-                                        Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda
-                                        perferendis dolore.
-                                    </p>
+                                    @php
+                                        $words = explode(' ', strip_tags($data->deskripsi)); // pisahkan kata & hilangkan tag HTML
+                                        $chunks = array_chunk($words, 40); // bagi tiap 150 kata
+                                    @endphp
 
-                                    <p>
-                                        Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in
-                                        accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate
-                                        cupiditate.
-                                    </p>
+                                    @foreach ($chunks as $chunk)
+                                        <p style="text-align:justify;">{!! implode(' ', $chunk) !!}</p>
+                                    @endforeach
+                                </div>
 
-                                    {{-- <blockquote>
-                                        <p>
-                                            Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut.
-                                            Aut eos aliquam doloribus minus autem quos.
-                                        </p>
-                                    </blockquote> --}}
-
-                                    <p>
-                                        Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore
-                                        tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil
-                                        magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil
-                                        quaerat.
-                                        Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti
-                                        velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                                        Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto
-                                        voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
-                                    </p>
-
-                                </div><!-- End post content -->
+                                <!-- End post content -->
                             </article>
 
                         </div>
@@ -90,7 +69,8 @@
 
                             <div id="comment-1" class="comment">
                                 <div class="d-flex">
-                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-1.jpg" alt=""></div>
+                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-1.jpg"
+                                            alt=""></div>
                                     <div>
                                         <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i
                                                     class="bi bi-reply-fill"></i> Reply</a></h5>
@@ -106,7 +86,8 @@
 
                             <div id="comment-2" class="comment">
                                 <div class="d-flex">
-                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-2.jpg" alt=""></div>
+                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-2.jpg"
+                                            alt=""></div>
                                     <div>
                                         <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i
                                                     class="bi bi-reply-fill"></i> Reply</a></h5>
@@ -120,7 +101,8 @@
 
                                 <div id="comment-reply-1" class="comment comment-reply">
                                     <div class="d-flex">
-                                        <div class="comment-img"><img src="/selecao/assets/img/blog/comments-3.jpg" alt="">
+                                        <div class="comment-img"><img src="/selecao/assets/img/blog/comments-3.jpg"
+                                                alt="">
                                         </div>
                                         <div>
                                             <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i
@@ -168,7 +150,8 @@
 
                             <div id="comment-3" class="comment">
                                 <div class="d-flex">
-                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-5.jpg" alt=""></div>
+                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-5.jpg"
+                                            alt=""></div>
                                     <div>
                                         <h5><a href="">Nolan Davidson</a> <a href="#" class="reply"><i
                                                     class="bi bi-reply-fill"></i> Reply</a></h5>
@@ -188,7 +171,8 @@
 
                             <div id="comment-4" class="comment">
                                 <div class="d-flex">
-                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-6.jpg" alt="">
+                                    <div class="comment-img"><img src="/selecao/assets/img/blog/comments-6.jpg"
+                                            alt="">
                                     </div>
                                     <div>
                                         <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i
@@ -258,8 +242,7 @@
                         <div class="blog-author-widget widget-item">
 
                             <div class="d-flex flex-column align-items-center">
-                                <img src="/img/logo_sma_dm[1].png" class="rounded-circle flex-shrink-0"
-                                    alt="">
+                                <img src="/img/logo_sma_dm[1].png" class="rounded-circle flex-shrink-0" alt="">
                                 <h4>SMA Daan Mogot</h4>
                                 <div class="social-links">
                                     <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
@@ -291,11 +274,17 @@
                         <!-- Categories Widget -->
                         <div class="categories-widget widget-item">
 
-                            <h3 class="widget-title">Categories</h3>
+                            <h3 class="widget-title">Kategori Berita</h3>
                             <ul class="mt-3">
-                                <li><a href="#">Event<span>(25)</span></a></li>
-                                <li><a href="#">Activity<span>(12)</span></a></li>
-                                <li><a href="#">Achievement<span>(55)</span></a></li>
+                                @foreach ($kategoriCounts as $item)
+                                    <li>
+                                        <a
+                                            href="{{ route('beritas.kategori', ['kategori' => Str::slug($item->kategori)]) }}">
+                                            {{ ucfirst($item->kategori) }} <span>({{ $item->total }})</span>
+                                        </a>
+                                    </li>
+                                @endforeach
+
                             </ul>
 
                         </div><!--/Categories Widget -->
@@ -305,31 +294,13 @@
 
                             <h3 class="widget-title">Recent Posts</h3>
 
+                            @foreach($berita->sortByDesc('created_at')->take(5) as $item)
                             <div class="post-item">
-                                <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div><!-- End recent post item-->
-
-                            <div class="post-item">
-                                <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div><!-- End recent post item-->
-
-                            <div class="post-item">
-                                <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div><!-- End recent post item-->
-
-                            <div class="post-item">
-                                <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div><!-- End recent post item-->
-
-                            <div class="post-item">
-                                <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div><!-- End recent post item-->
-
+                                <h4><a href="{{ route('detail.berita', $item->id) }}">{{ $item->judul }}</a></h4>
+                                <time>{{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</time>
+                            </div>
+                        @endforeach
+                        
                         </div><!--/Recent Posts Widget -->
 
                         <!-- Tags Widget -->

@@ -15,9 +15,23 @@ class EkstrakurikulerController extends Controller
      */
     public function index()
     {
-        $ekstrakulikuler=Ekstrakurikuler::all();
+        $ekstrakulikuler=Ekstrakurikuler::paginate(6);
         return view('admin.ekstrakulikuler.index', compact('ekstrakulikuler'));
     }
+
+    public function ekstrakulikuler_user()
+    {
+        $ekstrakulikuler = Ekstrakurikuler::all();
+        $kategori_list = Ekstrakurikuler::select('kategori')->distinct()->get();
+
+        $ekskulByKategori = [];
+        foreach ($kategori_list as $kategori) {
+            $ekskulByKategori[$kategori->kategori] = Ekstrakurikuler::where('kategori', $kategori->kategori)->get();
+        }
+
+        return view('users.kesiswaan.eskul.eskul', compact('ekstrakulikuler', 'kategori_list', 'ekskulByKategori'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -34,30 +48,44 @@ class EkstrakurikulerController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'pegawai_id' => 'nullable',
-            'nama' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'jumlah_anggota' => 'required|numeric',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pegawai_id'    => 'nullable|exists:pegawais,id',
+            'nama'          => 'required|string|max:255',
+            'kategori'      => 'required|in:Kenegaraan,Keagamaan,Seni,Olahraga,Sains & Teknologi',
+            'deskripsi'     => 'required|string',
+            'tahun_berdiri' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
+            'nama_ig'       => 'nullable|string|max:255',
+            'alamat_ig'     => 'nullable|url',
+            'jumlah_anggota'=> 'required|numeric|min:0',
+            'gambar'        => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'logo'        => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-
+    
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
-        
-            // Ambil ekstensi file (misalnya jpg, png)
+    
+            // Buat nama file yang aman
             $extension = $file->getClientOriginalExtension();
-        
-            // Ubah nama menjadi: nama-jurusan.jpg
-            $namaEkstrakulikuler = Str::slug($request->nama); // Biar aman dan rapi
+            $namaEkstrakulikuler = Str::slug($request->nama);
             $filename = $namaEkstrakulikuler . '.' . $extension;
-        
-            // Simpan file ke folder public/img/jurusan
+    
+            // Simpan gambar
             $file->move(public_path('img/ekstrakulikuler'), $filename);
-        
-            // Simpan nama file ke dalam database
             $validated['gambar'] = $filename;
         }
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
     
+            // Buat nama file yang aman
+            $extension = $file->getClientOriginalExtension();
+            $namaEkstrakulikuler = Str::slug($request->nama);
+            $filename = $namaEkstrakulikuler . '.' . $extension;
+    
+            // Simpan gambar
+            $file->move(public_path('img/ekstrakulikuler/logo'), $filename);
+            $validated['logo'] = $filename;
+        }
+    
+        // Simpan data
         $ekstrakulikuler = new Ekstrakurikuler($validated);
     
         if ($ekstrakulikuler->save()) {
@@ -94,6 +122,11 @@ class EkstrakurikulerController extends Controller
         $pembina=Pegawai::all();
         return view('admin.ekstrakulikuler.edit', compact('data','pembina'));
     }
+    public function detail_ekstrakulikuler_user($id)
+    {
+        $data = Ekstrakurikuler::find($id);
+        return view('users.kesiswaan.eskul.detail', compact('data'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -103,11 +136,16 @@ class EkstrakurikulerController extends Controller
         $ekstrakulikuler = Ekstrakurikuler::findOrFail($id);
 
         $validated = $request->validate([
-            'pegawai_id' => 'nullable',
-            'nama' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'jumlah_anggota' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pegawai_id'    => 'nullable|exists:pegawais,id',
+            'nama'          => 'required|string|max:255',
+            'kategori'      => 'required|in:Kenegaraan,Keagamaan,Seni,Olahraga,Sains & Teknologi',
+            'deskripsi'     => 'required|string',
+            'tahun_berdiri' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
+            'nama_ig'       => 'nullable|string|max:255',
+            'alamat_ig'     => 'nullable|url',
+            'jumlah_anggota'=> 'required|numeric|min:0',
+            'gambar'        => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'logo'        => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
     
         // Proses upload gambar baru jika ada
@@ -121,6 +159,17 @@ class EkstrakurikulerController extends Controller
             $filename = $request->nama . '.jpg'; // atau bisa pakai time() jika ingin unik
             $file->move(public_path('img/ekstrakulikuler'), $filename);
             $validated['gambar'] = $filename;
+        }
+        if ($request->hasFile('logo')) {
+            // Hapus gambar lama
+            if ($ekstrakulikuler->logo && File::exists(public_path('img/ekstrakulikuler/logo/' . $ekstrakulikuler->logo))) {
+                File::delete(public_path('img/ekstrakulikuler/logo/' . $ekstrakulikuler->logo));
+            }
+    
+            $file = $request->file('logo');
+            $filename = $request->nama . '.jpg'; // atau bisa pakai time() jika ingin unik
+            $file->move(public_path('img/ekstrakulikuler/logo'), $filename);
+            $validated['logo'] = $filename;
         }
     
         // Update data
@@ -152,6 +201,9 @@ class EkstrakurikulerController extends Controller
         // Hapus gambar dari folder jika ada
         if ($ekstrakulikuler->gambar && File::exists(public_path('img/ekstrakulikuler/' . $ekstrakulikuler->gambar))) {
             File::delete(public_path('img/ekstrakulikuler/' . $ekstrakulikuler->gambar));
+        }
+        if ($ekstrakulikuler->logo && File::exists(public_path('img/ekstrakulikuler/logo/' . $ekstrakulikuler->logo))) {
+            File::delete(public_path('img/ekstrakulikuler/logo/' . $ekstrakulikuler->logo));
         }
 
         // Hapus data dari database

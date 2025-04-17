@@ -53,6 +53,9 @@
                     @endforeach
                 </div>
             @endif
+            <div class="row mt-4 justify-content-center">
+                {{ $fasilitas->onEachSide(1)->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </section>
 @endsection

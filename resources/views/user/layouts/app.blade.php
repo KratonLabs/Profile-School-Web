@@ -28,7 +28,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="{{ asset('gp/assets/css/main.css') }}" rel="stylesheet">
   <link href="{{ asset('gp/assets/css/custom.css') }}" rel="stylesheet">
-
   <!-- =======================================================
   * Template Name: Gp
   * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/

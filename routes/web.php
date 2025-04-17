@@ -56,24 +56,14 @@ Route::get('/jurusan-user', [JurusanController::class, 'jurusan_user']);
 Route::get('/jurusan-detail', [JurusanController::class, 'jurusan_detail']);
 
 
-//Berita
-Route::get('/beritas', function () {
-    return view('users.berita.index');
-});
-
-Route::get('/detail-berita', function () {
-    return view('users.berita.detail');
-});
+Route::get('/beritas',[BeritaController::class, 'berita_user'])->name('beritas.kategori');
+Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail.berita');
 
 //Kesiswaan
 //--Ekstrakurikuler
-Route::get('/ekstrakurikuler', function () {
-    return view('users.kesiswaan.eskul.eskul');
-});
+Route::get('/ekstrakurikuler',[EkstrakurikulerController::class, 'ekstrakulikuler_user']);
+Route::get('/detail/{id}/ekstrakurikuler',[EkstrakurikulerController::class, 'detail_ekstrakulikuler_user']);
 
-Route::get('/ekskul-detail', function () {
-    return view('users.kesiswaan.eskul.detail');
-});
 // Organisasi
 Route::get('/organisasi', function () {
     return view('users.kesiswaan.osis.osis');

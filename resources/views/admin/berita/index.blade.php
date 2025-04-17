@@ -52,6 +52,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="row mt-4 justify-content-center">
+                    {{ $berita->onEachSide(1)->links('pagination::bootstrap-4') }}
+                </div>
             @endif
         </div>
     </section>
