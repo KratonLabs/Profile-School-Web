@@ -277,14 +277,13 @@
                             <h3 class="widget-title">Kategori Berita</h3>
                             <ul class="mt-3">
                                 @foreach ($kategoriCounts as $item)
-                                    <li>
-                                        <a
-                                            href="{{ route('beritas.kategori', ['kategori' => Str::slug($item->kategori)]) }}">
-                                            {{ ucfirst($item->kategori) }} <span>({{ $item->total }})</span>
-                                        </a>
-                                    </li>
-                                @endforeach
-
+                                <li>
+                                    <a
+                                    href="{{ route('beritas.kategori', ['kategori' => Str::slug($item->kategori)]) }}">
+                                        {{ ucfirst($item->kategori) }} <span>({{ $item->total }})</span>
+                                    </a>
+                                </li>
+                            @endforeach
                             </ul>
 
                         </div><!--/Categories Widget -->

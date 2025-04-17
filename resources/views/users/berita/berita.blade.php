@@ -27,41 +27,36 @@
                     <div class="features mb-4">
                         <ul class="nav nav-tabs row d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                             <li class="nav-item col-3 p-2">
-                                <a class="nav-link active show text-center" data-bs-toggle="tab" data-bs-target="#all">
+                                <a class="nav-link {{ empty($kategoriAktif) ? 'active show' : '' }} text-center"
+                                    data-bs-toggle="tab" data-bs-target="#all">
                                     <i class="bi bi-grid fs-2"></i>
                                     <h4 class="d-none d-lg-block mt-2">All</h4>
                                 </a>
                             </li>
                             @foreach ($kategori_list as $kategori)
-                            <li class="nav-item col-3 p-2">
-                                <a class="nav-link {{ isset($kategoriAktif) && Str::slug($kategoriAktif) === Str::slug($kategori) ? 'active show' : '' }} text-center"
-                                    data-bs-toggle="tab" data-bs-target="#{{ Str::slug($kategori) }}">
-                                    <i class="{{ $icons[strtolower($kategori)] ?? 'bi bi-folder' }} fs-2"></i>
-                                    <h4 class="d-none d-lg-block mt-2">{{ $kategori }}</h4>
-                                </a>
-                            </li>
-                        @endforeach
+                                <li class="nav-item col-3 p-2">
+                                    <a class="nav-link {{ isset($kategoriAktif) && ucfirst($kategoriAktif) === $kategori ? 'active show' : '' }} text-center"
+                                        data-bs-toggle="tab" data-bs-target="#{{ $kategori }}">
+                                        <i class="{{ $icons[strtolower($kategori)] ?? 'bi bi-folder' }} fs-2"></i>
+                                        <h4 class="d-none d-lg-block mt-2">{{ $kategori }}</h4>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
 
                     <!-- Konten Tab Kategori -->
                     <div class="tab-content">
-                        <div class="tab-pane fade show active" id="all">
+                        <div class="tab-pane fade {{ $kategoriAktif == null ? 'active show' : '' }}" id="all">
                             <div class="row gy-4">
                                 @foreach ($berita as $b)
                                     @include('users.berita.components.card_berita', ['berita' => $b])
                                 @endforeach
                             </div>
                         </div>
-                        @foreach ($kategori_list as $index => $kategori)
-                            @php $slug = Str::slug($kategori); @endphp
-                            @if (isset($kategoriAktif))
-                            <div class="tab-pane fade {{ Str::slug($kategori) === Str::slug($kategoriAktif) ? 'show active' : '' }}"
-                                id="{{ $slug }}">
-                            @else
-                                <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="{{ $slug }}">
-                            @endif
-
+                        @foreach ($kategori_list as $kategori)
+                            <div class="tab-pane fade {{ ucfirst($kategoriAktif) === $kategori ? 'show active' : '' }}"
+                                id="{{ $kategori }}">
                                 <div class="row gy-4">
                                     @foreach ($berita->where('kategori', $kategori) as $b)
                                         @include('users.berita.components.card_berita', ['berita' => $b])
@@ -69,6 +64,7 @@
                                 </div>
                             </div>
                         @endforeach
+
                     </div>
                 </div>
 
@@ -103,27 +99,27 @@
                             <h3 class="widget-title">Kategori Berita</h3>
                             <ul class="mt-3">
                                 @foreach ($kategoriCounts as $item)
-                                <li>
-                                    <a
-                                        href="{{ route('beritas.kategori', ['kategori' => Str::slug($item->kategori)]) }}">
-                                        {{ ucfirst($item->kategori) }} <span>({{ $item->total }})</span>
-                                    </a>
-                                </li>
-                            @endforeach
+                                    <li>
+                                        <a
+                                            href="{{ route('beritas.kategori', ['kategori' => Str::slug($item->kategori)]) }}">
+                                            {{ ucfirst($item->kategori) }} <span>({{ $item->total }})</span>
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
                         <!-- Recent Posts Widget -->
                         <div class="recent-posts-widget widget-item">
                             <h3 class="widget-title">Recent Posts</h3>
-                        
-                            @foreach($berita->sortByDesc('created_at')->take(5) as $item)
+
+                            @foreach ($berita->sortByDesc('created_at')->take(5) as $item)
                                 <div class="post-item">
                                     <h4><a href="{{ route('detail.berita', $item->id) }}">{{ $item->judul }}</a></h4>
                                     <time>{{ \Carbon\Carbon::parse($item->created_at)->format('M d, Y') }}</time>
                                 </div>
                             @endforeach
-                        </div>                        
+                        </div>
 
                         <!-- Tags Widget -->
                         <div class="tags-widget widget-item">

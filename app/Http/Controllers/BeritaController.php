@@ -199,7 +199,8 @@ class BeritaController extends Controller
         $kategoriAktif = $request->query('kategori'); 
         return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
     }else{
-        return view('users.berita.berita', compact('kategori_list', 'berita','kategoriCounts'));
+        $kategoriAktif = null;
+        return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
     }
     }
 
