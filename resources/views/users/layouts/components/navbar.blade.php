@@ -32,7 +32,7 @@
     </li>
     <li><a href="/jurusan-user">Jurusan</a></li>
     <li><a href="/beritas">Berita</a>
-    <li><a href="#contact">Kontak</a>
+    <li><a href="/kontak">Kontak</a>
   </ul>
   <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>

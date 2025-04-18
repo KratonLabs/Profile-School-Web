@@ -3,9 +3,7 @@
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
         <section id="call-to-action" class="call-to-action section dark-background">
-
-            <img src="{{ asset('gp/assets/img/cta-bg.jpg') }}" alt="">
-      
+            <img src="{{ asset('/gp/assets/img/hero-bg.jpg') }}" alt="">
             <div class="container">
               <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
@@ -17,7 +15,6 @@
                 </div>
               </div>
             </div>
-      
           </section><!-- /Call To Action Section -->
         <nav class="breadcrumbs">
             <div class="container">
@@ -33,7 +30,7 @@
     <section id="starter-section" class="starter-section section">
 
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="section-title" data-aos="fade-up">
             <h2>Starter Section</h2>
             <p>Check Starter Section<br></p>
         </div><!-- End Section Title -->
@@ -42,9 +39,9 @@
             {!!  $cleanDeskripsi !!} 
         </div>
 
-        {{-- <div class="m-3 d-flex justify-content-center">
+        <div class="m-3 d-flex justify-content-center">
           <iframe src="{{ asset('doc/Kumpulan SS share poster.pdf') }}" width="85%" height="600px"></iframe>
-        </div> --}}
+        </div>
 
 
     </section><!-- /Starter Section Section -->

@@ -68,6 +68,7 @@ Route::get('/jurusan-detail/{id}', [JurusanController::class, 'jurusan_detail'])
 //Berita
 Route::get('/beritas',[BeritaController::class, 'berita_user'])->name('beritas.kategori');
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail.berita');
+Route::get('/beritas/cari', [BeritaController::class, 'cari'])->name('beritas.cari');
 
 //Kesiswaan
 //--Ekstrakurikuler
@@ -86,7 +87,12 @@ Route::get('/struktur', function () {
     return view('users.kesiswaan.osis.struktur');
 });
 
-// Route::get('/test', function () {return view('user.test');});
+//Kontak
+Route::get('/kontak', function () {
+    return view('users.sekolah.kontak');
+});
+
+Route::get('/test', function () {return view('user.test');});
 Route::get('/test', [JurusanController::class, 'test']);
 
 Route::get('/login', function () {return view('admin.login');})->name('login');

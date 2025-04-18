@@ -12,14 +12,14 @@
 
             <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">Event</li>
-                <li data-filter=".filter-product">Pengumuman</li>
-                <li data-filter=".filter-branding">Prestasi</li>
+                <li data-filter=".filter-event">Event</li>
+                <li data-filter=".filter-pengumuman">Pengumuman</li>
+                <li data-filter=".filter-prestasi">Prestasi</li>
             </ul><!-- End Portfolio Filters -->
 
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -34,7 +34,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -49,7 +49,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -64,7 +64,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -79,7 +79,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -94,7 +94,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -109,7 +109,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -124,7 +124,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">
@@ -139,7 +139,7 @@
                     </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
                     <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid"
                         alt="">
                     <div class="portfolio-info">

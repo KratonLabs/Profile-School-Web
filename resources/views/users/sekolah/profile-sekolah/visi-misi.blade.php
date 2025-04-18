@@ -1,7 +1,6 @@
 @extends('users.layouts.app')
 @section('content')
-<main class="main">
-    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
+    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">   
         <div class="section-title" data-aos="fade-up">
             <h2>Profil Sekolah</h2>
             <p>Visi, Misi , Tujuan, dan Makna Logo</p>
@@ -46,7 +45,11 @@
                         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    <p class="text-muted">
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
                 </div>
 
             </div>
@@ -58,5 +61,4 @@
             @include('users.sekolah.profile-sekolah.logo')
         </div>
     </section>
-</main>
 @endsection

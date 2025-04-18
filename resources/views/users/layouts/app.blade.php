@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href='/selecao/assets/img/favicon.png' rel="icon">
+    <link href='/img/logo_sma_dm[1].png' rel="icon">
     <link href='/img/logo_sma_dm[1].png'>
 
     <!-- Fonts -->
@@ -20,8 +20,6 @@
         rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-
-
     <!-- Vendor CSS Files -->
     <link href="{{ asset('/selecao/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/selecao/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -31,17 +29,21 @@
     <link href="{{ asset('/selecao/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-
     <!-- Main CSS File -->
     <link href="{{ asset('/selecao/assets/css/main.css') }}" rel="stylesheet">
 
+    <!-- AOS: Animate On Scroll -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
     <!-- =======================================================
-  * Template Name: Selecao
-  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    * Template Name: Selecao
+    * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+    * Updated: Aug 07 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -74,8 +76,13 @@
     <!-- Main JS File -->
     <script src="{{ asset('/selecao/assets/js/main.js') }}"></script>
 
+    <!-- jQuery dan plugin animasi angka -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/counterup2@1.0.4/dist/index.js"></script>
 
-
+    <!-- AOS: Animate On Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 
 </html>

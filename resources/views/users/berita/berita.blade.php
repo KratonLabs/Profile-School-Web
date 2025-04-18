@@ -88,10 +88,10 @@
                         <!-- Search Widget -->
                         <div class="search-widget widget-item">
                             <h3 class="widget-title">Search</h3>
-                            <form>
-                                <input type="text">
+                            <form action="{{ route('beritas.cari') }}" method="GET">
+                                <input type="text" name="keyword" placeholder="Cari berita..." value="{{ request('keyword') }}">
                                 <button type="submit"><i class="bi bi-search"></i></button>
-                            </form>
+                            </form>      
                         </div>
 
                         <!-- Categories Widget -->

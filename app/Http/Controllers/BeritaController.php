@@ -186,22 +186,42 @@ class BeritaController extends Controller
     public function berita_user(Request $request)
     {
 
-    $kategori_list = DB::table('beritas')->distinct()->pluck('kategori');
-    $berita = Berita::all();
+        $kategori_list = DB::table('beritas')->distinct()->pluck('kategori');
+        $berita = Berita::all();
 
-    $kategoriCounts = Berita::select('kategori')
-        ->groupBy('kategori')
-        ->selectRaw('kategori, COUNT(*) as total')
-        ->get();
+        $kategoriCounts = Berita::select('kategori')
+            ->groupBy('kategori')
+            ->selectRaw('kategori, COUNT(*) as total')
+            ->get();
 
-    if($request->query('kategori'))
+        if($request->query('kategori'))
+        {
+            $kategoriAktif = $request->query('kategori'); 
+            return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
+        }else{
+            $kategoriAktif = null;
+            return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
+        }
+    }
+
+    public function cari(Request $request)
     {
-        $kategoriAktif = $request->query('kategori'); 
-        return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
-    }else{
-        $kategoriAktif = null;
-        return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriAktif','kategoriCounts'));
+        $keyword = $request->keyword;
+
+        // Cari berdasarkan judul atau kategori (dengan LIKE)
+        $berita = Berita::where('judul', 'like', "%$keyword%")
+                        ->orWhere('kategori', 'like', "%$keyword%")
+                        ->latest()
+                        ->get();
+
+        // Ambil semua kategori unik & icon jika diperlukan
+        $kategori_list = Berita::select('kategori')->distinct()->pluck('kategori');
+        $kategoriCounts = Berita::select('kategori', DB::raw('count(*) as total'))
+                                ->groupBy('kategori')->get();
+
+        return view('users.berita.berita', compact('berita', 'kategori_list', 'kategoriCounts'))
+            ->with('kategoriAktif', null);
     }
-    }
+
 
 }

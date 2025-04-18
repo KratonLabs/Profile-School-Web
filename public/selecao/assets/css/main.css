@@ -425,6 +425,7 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -482,6 +483,92 @@ h6 {
 .footer .credits {
   font-size: 13px;
   padding-top: 5px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer .school-info {
+  display: flex;  
+  align-items: flex-start;
+  gap: 15px;  
+}
+
+.footer .school-info img {
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.school-desc {
+  text-align: justify;
+  font-size: 0.90rem;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  list-style: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer ul li a {
+  color: var(--default-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.footer .social-links i {
+  font-size: 18px;
+}
+
+.footer img {
+  border-radius: 4px;
+}
+
+.featured-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 8px 20px; /* jarak antar item (baris, kolom) */
+}
+
+.featured-links li {
+  margin-bottom: 0; /* hilangkan margin agar rapi */
+  white-space: nowrap;
+}
+
+.footer .btn-outline-light:hover {
+  background-color: #e91d1d;
+  border-color: #e91d1d;
+  color: #fff;
+}
+
+
+
+/* Agar teks deskripsi tidak terlalu panjang ke bawah */
+.school-text p {
+  max-width: 280px; /* bisa disesuaikan */
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Jika ingin ukuran teks judul sedikit lebih besar */
+.school-title {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap; /* mencegah patah baris */
+  font-size: 1.2rem;
 }
 
 /*--------------------------------------------------------------
@@ -1828,6 +1915,7 @@ article:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
@@ -2901,3 +2989,20 @@ article:hover {
   text-decoration: underline;
   color: #fff200;
 }
+
+.hover-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.hover-icon:hover {
+  background-color: #e91d1d;
+  color: white;
+}
+

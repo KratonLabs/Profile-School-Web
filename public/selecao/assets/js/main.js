@@ -6,6 +6,19 @@
 * License: https://bootstrapmade.com/license/
 */
 
+// Inisialisasi AOS untuk Statistic
+AOS.init();
+
+// Inisialisasi CounterUp2
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    new CounterUp(counter, {
+      duration: 2000,
+      delay: 16,
+    }).start();
+  });
+});
 
 (function() {
   "use strict";

@@ -10,7 +10,7 @@
     <div class="row gy-4">
 
         <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis provident,
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis provident,
                 rerum iusto harum explicabo alias vitae suscipit, blanditiis vel inventore voluptatem nisi nemo nihil
                 omnis saepe. Nesciunt fugit voluptatibus, natus atque sapiente sunt odit culpa at voluptate adipisci
                 corporis accusamus voluptatem maiores voluptas earum vero esse. Explicabo, dolorem? Architecto?</p>
