@@ -53,7 +53,7 @@ Route::get('/fasilitas-item', function () {
 
 // Jurusan
 Route::get('/jurusan-user', [JurusanController::class, 'jurusan_user']);
-Route::get('/jurusan-detail', [JurusanController::class, 'jurusan_detail']);
+Route::get('/jurusan-detail/{id}', [JurusanController::class, 'jurusan_detail']);
 
 
 Route::get('/beritas',[BeritaController::class, 'berita_user'])->name('beritas.kategori');

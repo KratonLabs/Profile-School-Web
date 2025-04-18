@@ -18,9 +18,9 @@ class JurusanController extends Controller
         return view('users.jurusan.index', compact('jurusan'));
     }
 
-    public function jurusan_detail()
+    public function jurusan_detail($id)
     {
-        $jurusan = Jurusan::all();
+        $jurusan = Jurusan::where('id',$id)->first();
         return view('users.jurusan.detail', compact('jurusan'));
     }
     /**

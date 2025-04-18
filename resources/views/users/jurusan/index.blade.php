@@ -35,8 +35,8 @@
                                 </div>
 
                                 <!-- Isi Misi -->
-                                <p class="text-muted">{{ $items->deskripsi }}</p>
-                                <a href="/jurusan-detail" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                                <p class="text-muted">{!! $items->deskripsi !!}</p>
+                                <a href="/jurusan-detail/{{ $items->id }}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
                             </div>
 
@@ -59,9 +59,9 @@
 
                             <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
                                 <p class="text-muted">
-                                    {{ $items->deskripsi }}
+                                    {!! $items->deskripsi !!}
                                 </p>
-                                <a href="/jurusan-detail" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                                <a href="/jurusan-detail/{{ $items->id }}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                             </div>
 
                             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">

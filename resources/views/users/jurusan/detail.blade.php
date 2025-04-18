@@ -10,11 +10,10 @@
         </div>
         <!-- End Page Title -->
         <section id="portfolio-details" class="portfolio-details section">
-            @foreach ($jurusan as $items)
                 <div class="container" data-aos="fade-up">
 
                     <div class="portfolio-images d-flex justify-content-center flex-wrap gap-4" style="padding: 20px 0;">
-                        <img src="{{ asset('img/jurusan/' . $items->gambar) }}" alt="App 1"
+                        <img src="{{ asset('img/jurusan/' . $jurusan->gambar) }}" alt="App 1"
                             class="img-fluid shadow rounded" style="width: 1500px; height: 600px;">
 
                     </div>
@@ -23,14 +22,9 @@
 
                         <div class="col-lg-8" data-aos="fade-up">
                             <div class="portfolio-description">
-                                <h2>{{ $items->nama }}</h2>
-                                <p>
-                                    {{ $items->deskripsi }}
-                                </p>
-                                <p>
-                                    Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus
-                                    ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et
-                                    doloribus doloremque nesciunt molestiae laboriosam.
+                                <h2>{{ $jurusan->nama }}</h2>
+                                <p style="text-align: justify">
+                                    {!! $jurusan->deskripsi !!}
                                 </p>
 
                                 <div class="testimonial-item">
@@ -48,18 +42,6 @@
                                         <h4>Pembina Paskibra</h4>
                                     </div>
                                 </div>
-
-                                <p>
-                                    Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati
-                                    earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae
-                                    incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-                                </p>
-
-                                <p>
-                                    Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem
-                                    libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque
-                                    praesentium rem et qui nesciunt.
-                                </p>
 
                             </div>
                         </div>
@@ -89,7 +71,6 @@
                     </div>
 
                 </div>
-            @endforeach
 
         </section>
     </main>
