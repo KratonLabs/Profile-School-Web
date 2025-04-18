@@ -2,7 +2,7 @@
 @section('content')
     <main class="main">
         <!-- Page Title -->
-        <div class="page-title dark-background">
+        <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
             <div class="section-title" data-aos="fade-up">
                 <h2>SMA Daan Mogot</h2>
                 <p>Jurusan Studi</p>
@@ -17,7 +17,6 @@
                             class="img-fluid shadow rounded" style="width: 1500px; height: 600px;">
 
                     </div>
-
                     <div class="row justify-content-between gy-4 mt-4">
 
                         <div class="col-lg-8" data-aos="fade-up">
@@ -39,7 +38,7 @@
                                         <img src="/selecao/assets/img/testimonials/testimonials-2.jpg"
                                             class="testimonial-img" alt="">
                                         <h3>Sara Wilsson</h3>
-                                        <h4>Pembina Paskibra</h4>
+                                        <h4>Kesiswaan</h4>
                                     </div>
                                 </div>
 
@@ -48,7 +47,7 @@
 
                         <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
                             <div class="portfolio-info">
-                                <h3>Profil Eskul</h3>
+                                <h3>Profil Sekolah</h3>
                                 <ul>
                                     <li>
                                         <i class="bi bi-person-badge"></i> <strong>Kepala Sekolah:</strong> Sara Wilson
@@ -58,7 +57,7 @@
                                     </li>
                                     <li>
                                         <i class="bi bi-instagram"></i> <strong>Instagram:</strong>
-                                        <a href="https://instagram.com/eskul_paskibra" target="_blank">@eskul_paskibra</a>
+                                        <a href="https://instagram.com/eskul_paskibra" target="_blank">@smadaanmogot</a>
                                     </li>
                                     <li>
                                         <i class="bi bi-link-45deg"></i> <strong>Form Pendaftaran:</strong>

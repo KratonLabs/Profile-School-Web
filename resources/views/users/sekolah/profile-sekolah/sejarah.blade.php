@@ -1,6 +1,7 @@
 @extends('users.layouts.app')
 @section('content')
-    <div class="page-title dark-background">
+<main class="main">   
+    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
         <div class="section-title" data-aos="fade-up">
             <h2>Profil Sekolah</h2>
             <p>Sejarah SMA Daan Mogot Kota Tangerang</p>
@@ -39,7 +40,7 @@
     <!-- /Sambutan Kepala Sekolah -->
     <section id="blog-details" class="blog-details section" style="background-color #fdf7e3;">
         <div class="content">
-            <blockquote class="border-left: 5px solid #ffc451; background: #fdf7e3; padding: 20px 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 10px; font-style: italic;">
+            <blockquote>
                 <p style="margin: 0; color: #222" >
                     Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut.
                     Aut eos aliquam doloribus minus autem quos.
@@ -88,4 +89,5 @@
 
     </section>
     <!-- /Sejarah -->
+</main>
 @endsection

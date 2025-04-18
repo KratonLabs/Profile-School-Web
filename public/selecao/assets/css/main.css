@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #e91d1d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,11 +30,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffc451; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #e91d1d; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #000000; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffc451;/* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #e91d1d; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1531,6 +1531,7 @@ section,
   border-radius: 5px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   height: 100%;
+ 
 }
 
 .team .team-member .member-img {
@@ -1574,6 +1575,7 @@ section,
 .team .team-member .member-info {
   padding: 25px 15px;
   background: var(--accent-color);
+  min-height: 270px;
 }
 
 .team .team-member .member-info h4 {
@@ -1595,9 +1597,103 @@ section,
   bottom: 15px;
 }
 
+
+.team-member .member-img {
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.team-member .member-img img {
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover .member-img img {
+  transform: scale(1.05);
+}
+
+.team-member:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.member-img .social {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+}
+
+.member-img:hover .social {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.member-img .social a {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    color: #e91d1d;
+}
+
+.member-img .social a:hover {
+    transform: scale(1.2);
+    background: #f8e807;
+    color: #000;
+}
+
+
 /*--------------------------------------------------------------
 # Recent Posts Section
 --------------------------------------------------------------*/
+
+.title a {
+  transition: color 0.3s;
+}
+
+.title a:hover {
+  color: #f8e807 !important;
+}
+
+.post-img {
+  position: relative;
+}
+
+.post-img .icon-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 14px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.post-img:hover .icon-link {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+article:hover {
+  transform: scale(1.02);
+}
+
+
 .recent-posts article {
   background: var(--surface-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -1840,6 +1936,17 @@ section,
 
 .portfolio-details .portfolio-info .btn-visit:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.portfolio-description h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -2709,7 +2816,7 @@ section,
   display: inline-block;
   padding: 15px 20px;
   margin: 10px;
-  border: 2px solid orange;
+  border: 2px solid  #e91d1d; 
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -2718,7 +2825,7 @@ section,
 
 .box i, .card i {
   font-size: 20px;
-  color: orange;
+  color: #e91d1d; 
   margin-bottom: 5px;
 }
 
@@ -2755,8 +2862,8 @@ section,
 }
 
 .pagination .page-item .page-link {
-  border: 2px solid #ffc451;
-  color: #ffc451;
+  border: 2px solid  #e91d1d; 
+  color: #e91d1d; 
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -2767,9 +2874,9 @@ section,
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #ffc451;
+  background-color: #e91d1d; 
   color: #fff;
-  border-color: #ffc451;
+  border-color:  #e91d1d; 
 }
 
 .pagination .page-item.disabled .page-link {
@@ -2780,9 +2887,17 @@ section,
 }
 
 .pagination .page-link:hover {
-  background-color: #ffc451;
+  background-color:  #e91d1d; 
   color: white;
 }
 
+.readmore-link {
+  color: #ffc107;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-
+.readmore-link:hover {
+  text-decoration: underline;
+  color: #fff200;
+}

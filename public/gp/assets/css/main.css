@@ -19,11 +19,11 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #f5eded; /* Background color for the entire website, including individual sections */
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #f5eded;/* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --accent-color: #f8e807; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
@@ -31,8 +31,8 @@
 :root {
   --nav-color: rgba(255, 255, 255, 0.905);  /* The default color of the main navmenu links */
   --nav-hover-color: #ffc451; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #f5eded;/* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #f5eded; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffc451; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
@@ -41,13 +41,13 @@
 
 .light-background {
   --background-color: #f9f9f9;
-  --surface-color:#f5eded;
+  --surface-color: #ffffff;
 }
 
 .dark-background {
   --background-color: #060606;
-  --default-color:#f5eded;
-  --heading-color: #f5eded;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
   --surface-color: #252525;
   --contrast-color: #2a2727;
 }
@@ -92,7 +92,7 @@ h6 {
 .php-email-form .error-message {
   display: none;
   background: #df1529;
-  color: #f5eded;
+  color: #ffffff;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -101,7 +101,7 @@ h6 {
 
 .php-email-form .sent-message {
   display: none;
-  color: #f5eded;
+  color: #ffffff;
   background: #059652;
   text-align: center;
   padding: 15px;
