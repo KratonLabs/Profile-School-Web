@@ -145,14 +145,14 @@ h6 {
 --------------------------------------------------------------*/
 /* Tetapkan warna background solid */
 #header {
-  background: #161515!important; /* Ganti sesuai warna yang kamu inginkan */
+  background: #181717!important; /* Ganti sesuai warna yang kamu inginkan */
   box-shadow: none !important;
   transition: none !important;
 }
 
 /* Saat scroll, tetap sama */
 #header.header-scrolled {
-  background: #0000001a !important;
+  background: #0000 !important;
   box-shadow: none !important;
 }
 
@@ -682,7 +682,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 180px 0 90px 0;
+  padding: 200px 0 90px 0;
   text-align: center;
   position: relative;
 }

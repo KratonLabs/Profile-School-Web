@@ -27,7 +27,6 @@
       <ul>
         <li><a href="/organisasi">Keorganisasian</a></li>
         <li><a href="/ekstrakurikuler">Ekstrakulikuler</a></li>
-        <li><a href="/">Prestasi</a></li>
       </ul>
     </li>
     <li><a href="/jurusan-user">Jurusan</a></li>
