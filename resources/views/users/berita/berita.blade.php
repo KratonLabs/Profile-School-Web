@@ -52,6 +52,9 @@
                                 @foreach ($berita as $b)
                                     @include('users.berita.components.card_berita', ['berita' => $b])
                                 @endforeach
+                                @if ($berita->isEmpty())
+                                <p class="text-start text-center">Tidak ditemukan berita dengan kata kunci "{{ request('keyword') }}"</p>
+                                @endif
                             </div>
                         </div>
                         @foreach ($kategori_list as $kategori)
@@ -61,6 +64,9 @@
                                     @foreach ($berita->where('kategori', $kategori) as $b)
                                         @include('users.berita.components.card_berita', ['berita' => $b])
                                     @endforeach
+                                    @if ($berita->isEmpty())
+                                    <p class="text-start text-center">Tidak ditemukan berita dengan kata kunci "{{ request('keyword') }}"</p>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

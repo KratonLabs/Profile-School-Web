@@ -143,6 +143,20 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
+/* Tetapkan warna background solid */
+#header {
+  background: #161515!important; /* Ganti sesuai warna yang kamu inginkan */
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+/* Saat scroll, tetap sama */
+#header.header-scrolled {
+  background: #0000001a !important;
+  box-shadow: none !important;
+}
+
+
 .header {
   --background-color: rgba(0, 0, 0, 0);
   --heading-color: #ffffff;
@@ -668,7 +682,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 0 60px 0;
+  padding: 180px 0 90px 0;
   text-align: center;
   position: relative;
 }

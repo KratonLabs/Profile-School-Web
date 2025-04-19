@@ -108,11 +108,11 @@
                       <i class="bi bi-calendar-check"></i> <strong>Tahun Berdiri:</strong> 2015
                     </li>
                     <li>
-                      <i class="bi bi-people-fill"></i> <strong>Jumlah Anggota:</strong> 45 siswa
+                      <i class="bi bi-people-fill"></i> <strong>Jumlah Anggota:</strong> 25 Orang
                     </li>
                     <li>
                       <i class="bi bi-instagram"></i> <strong>Instagram:</strong> 
-                      <a href="https://instagram.com/eskul_paskibra" target="_blank">@eskul_paskibra</a>
+                      <a href="https://instagram.com/eskul_paskibra" target="_blank">@osis_smadaanmogot</a>
                     </li>
                     <li>
                       <i class="bi bi-link-45deg"></i> <strong>Form Pendaftaran:</strong> 
