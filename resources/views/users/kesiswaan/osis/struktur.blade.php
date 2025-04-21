@@ -24,10 +24,6 @@
       <!-- Wakasek & Pembina -->
       <div class="horizontal-box">
         <div class="box">
-          <i class="bi bi-person-workspace"></i><br>
-          Pembimbing<br><strong>Hardi Nurdiansyah, S.T.</strong>
-        </div>
-        <div class="box">
           <i class="bi bi-person-video3"></i><br>
           Pembina OSIS<br><strong>Reynard Christines, S.Inf.</strong>
         </div>

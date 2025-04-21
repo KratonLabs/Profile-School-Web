@@ -19,23 +19,15 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin Utama',
                 'email' => 'admin@gmail.com',
+            ],  
+            [
+                'name' => 'Kepala Sekolah',
+                'email' => 'kepalasekolah@example.com',
             ],
             [
-                'name' => 'User Satu',
-                'email' => 'user1@example.com',
-            ],
-            [
-                'name' => 'User Dua',
-                'email' => 'user2@example.com',
-            ],
-            [
-                'name' => 'User Tiga',
-                'email' => 'user3@example.com',
-            ],
-            [
-                'name' => 'User Empat',
-                'email' => 'user4@example.com',
-            ],
+                'name' => 'osis',
+                'email' => 'osis@example.com',
+            ],  
         ];
 
         foreach ($users as $user) {
