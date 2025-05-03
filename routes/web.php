@@ -10,9 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\PegawaiController;
 
-Route::get('/', function () {
-    return view('users.home.index');
-});
+Route::get('/', [BeritaController::class, 'home']);
 
 Route::get('/home', function () {
     return view('user.index');

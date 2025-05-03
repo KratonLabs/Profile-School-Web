@@ -12,149 +12,30 @@
 
             <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-event">Event</li>
+                <li data-filter=".filter-kegiatan">Kegiatan</li>
                 <li data-filter=".filter-pengumuman">Pengumuman</li>
                 <li data-filter=".filter-prestasi">Prestasi</li>
-            </ul><!-- End Portfolio Filters -->
-
+            </ul>
+            
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>App 1</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1"
-                            data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
+                @foreach($beritas as $berita)
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ strtolower($berita->kategori) }}">
+                        <img src="{{ asset('img/berita/' . $berita->gambar) }}" class="img-fluid" width="400px" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{ $berita->judul }}</h4>
+                            <p>{{ Str::limit($berita->deskripsi, 50) }}</p>
+                            <a href="{{ asset('img/berita/' . $berita->gambar) }}" title="{{ $berita->judul }}"
+                                data-gallery="portfolio-gallery-{{ strtolower($berita->kategori) }}" class="glightbox preview-link">
+                                <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="{{ route('detail.berita', ['id' => $berita->id]) }}" title="More Details" class="details-link">
+                                <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
                     </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita Satu</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1"
-                            data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita 2</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1"
-                            data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>App 2</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2"
-                            data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita 3</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2"
-                            data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita 4</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2"
-                            data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-event">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita 5</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3"
-                            data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pengumuman">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Berita 6</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                            data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-prestasi">
-                    <img src="/selecao/assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid"
-                        alt="">
-                    <div class="portfolio-info">
-                        <h4>Branding 3</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quis incidunt ipsam nobis
-                            molestiae autem error, similique earum neque omnis!</p>
-                        <a href="/selecao/assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2"
-                            data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                                class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                class="bi bi-link-45deg"></i></a>
-                    </div>
-                </div><!-- End Portfolio Item -->
-
-            </div><!-- End Portfolio Container -->
+                @endforeach
+            </div>
+            
 
         </div>
 

@@ -183,6 +183,13 @@ class BeritaController extends Controller
     //      return view('users.berita.index', compact('berita'));
     // }
 
+    public function home(Request $request)
+    {
+        // Ambil semua berita
+        $beritas = Berita::latest()->take(9)->get();
+        return view('users.home.index', compact('beritas'));
+    }
+
     public function berita_user(Request $request)
     {
 
