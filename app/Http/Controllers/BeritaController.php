@@ -81,6 +81,11 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
+      //
+    }
+
+    public function tampil($id)
+    {
         $data = Berita::find($id);
         $berita = Berita::all();
         $kategoriCounts = Berita::select('kategori')

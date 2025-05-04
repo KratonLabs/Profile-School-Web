@@ -65,7 +65,7 @@ Route::get('/jurusan-detail/{id}', [JurusanController::class, 'jurusan_detail'])
 
 //Berita
 Route::get('/beritas',[BeritaController::class, 'berita_user'])->name('beritas.kategori');
-Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail.berita');
+Route::get('/beritas/{id}', [BeritaController::class, 'tampil'])->name('detail.berita');
 Route::get('/beritas/cari', [BeritaController::class, 'cari'])->name('beritas.cari');
 
 //Kesiswaan

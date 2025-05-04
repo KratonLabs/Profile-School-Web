@@ -14,7 +14,7 @@
                 </ul>
             </div>
             <div>
-                <a href="/berita/create" type="button" class="btn btn-sm btn-primary"><i
+                <a href="{{ route('berita.create') }}" type="button" class="btn btn-sm btn-primary"><i
                         class="fa fa-plus"></i></a>
             </div>
         </div>
