@@ -15,4 +15,8 @@ class Berita extends Model
         'gambar',
         'dilihat'
     ];
+    public function komentars()
+    {
+        return $this->hasMany(Komentar::class, 'berita_id');
+    }
 }

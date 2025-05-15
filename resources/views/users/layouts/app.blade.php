@@ -21,20 +21,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('/selecao/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/selecao/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('/selecao/assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('/selecao/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/selecao/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/selecao/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="{{ asset('/selecao/assets/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('selecao/assets/css/main.css') }}" rel="stylesheet">
 
     <!-- AOS: Animate On Scroll -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    {{-- SweetAlert2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <!-- =======================================================
@@ -64,17 +67,20 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
+
+    @include('users.alert.sweetalert')
+
     <!-- Vendor JS Files -->
-    <script src="{{ asset('/selecao/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('/selecao/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('selecao/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Main JS File -->
-    <script src="{{ asset('/selecao/assets/js/main.js') }}"></script>
+    <script src="{{ asset('selecao/assets/js/main.js') }}"></script>
 
     <!-- jQuery dan plugin animasi angka -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,16 +1,19 @@
 <?php
 
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\EkstrakurikulerController;
-use App\Http\Controllers\FasilitasController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\JurusanController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\MataPelajaranController;
+use App\Http\Controllers\EkstrakurikulerController;
 
-Route::get('/', [BeritaController::class, 'home']);
+Route::get('/', [BeritaController::class, 'home'])->name('home');
 
 Route::get('/home', function () {
     return view('user.index');
@@ -90,6 +93,13 @@ Route::get('/kontak', function () {
     return view('users.sekolah.kontak');
 });
 
+//Feedback
+Route::post('/feedback-user', [FeedbackController::class, 'feedback_user'])->name('add.feedback.user');
+
+// Form Komentar
+ Route::resource('/komentar', KomentarController::class)->names('komentar');
+
+
 Route::get('/test', function () {return view('user.test');});
 Route::get('/test', [JurusanController::class, 'test']);
 
@@ -106,5 +116,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/ekstrakulikuler', EkstrakurikulerController::class)->names('ekstrakulikuler');
     Route::resource('/fasilitas', FasilitasController::class)->names('fasilitas');
     Route::resource('/berita', BeritaController::class)->names('berita');
+    Route::resource('/feedback', FeedbackController::class)->names('feedback');
 });
 

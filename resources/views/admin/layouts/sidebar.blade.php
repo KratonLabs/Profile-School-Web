@@ -51,6 +51,10 @@
           <li class="{{ request()->is('berita*') ? 'active' : '' }}">
               <a href="/berita"> <i class="fa fa-newspaper-o"></i>Berita </a>
           </li>
+          
+            <li class="{{ request()->is('feedback*') ? 'active' : '' }}">
+                <a href="/feedback"> <i class="fa fa-comments"></i>Feedback </a>
+          </li>
       
       </ul>      
       </nav>

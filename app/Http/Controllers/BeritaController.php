@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Komentar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -37,7 +38,7 @@ class BeritaController extends Controller
             'judul' => 'required|string|max:255',
             'kategori' => 'required|in:Pengumuman,Kegiatan,Prestasi',
             'deskripsi' => 'required|string',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -87,13 +88,16 @@ class BeritaController extends Controller
     public function tampil($id)
     {
         $data = Berita::find($id);
+        $data->increment('dilihat');
         $berita = Berita::all();
         $kategoriCounts = Berita::select('kategori')
         ->groupBy('kategori')
         ->selectRaw('kategori, COUNT(*) as total')
         ->get();
 
-        return view('users.berita.detail', compact('data','berita','kategoriCounts'));
+        $komentar = Komentar::where('berita_id', $id)->get();
+
+        return view('users.berita.detail', compact('data','berita','kategoriCounts','komentar'));
     }
 
     /**
@@ -116,7 +120,7 @@ class BeritaController extends Controller
             'judul' => 'required|string|max:255',
             'kategori' => 'required|in:Pengumuman,Kegiatan,Prestasi',
             'deskripsi' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
     
         // Proses upload gambar baru jika ada
