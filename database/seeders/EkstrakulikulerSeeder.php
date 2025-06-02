@@ -43,7 +43,7 @@ class EkstrakulikulerSeeder extends Seeder
         Ekstrakurikuler::create([
             'pegawai_id' => 8,
             'nama' => 'Volley',
-            'kategori' => 'Keagamaan',
+            'kategori' => 'Olahraga',
             'deskripsi' => 'Olahraga ini banyak digemari karena menyenangkan, kompetitif, dan bisa membawa sekolah ke ajang turnamen antar sekolah. Volley mengembangkan ketangkasan, stamina, dan sportivitas.',
             'tahun_berdiri' => '2009',
             'jumlah_anggota' => 150,

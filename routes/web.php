@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\CarouselEskulController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\JurusanController;
@@ -109,7 +110,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {return view('admin.dashboard');})->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('/jabatan', JabatanController::class)->names('jabatan');
     Route::resource('/mata-pelajaran', MataPelajaranController::class)->names('mata-pelajaran');
     Route::resource('/pegawai', PegawaiController::class)->names('pegawai');

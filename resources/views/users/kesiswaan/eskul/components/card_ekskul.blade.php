@@ -1,7 +1,7 @@
 <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
     <article class="shadow-lg rounded overflow-hidden" style="background-color: #e91d1d;">
         <div class="post-img position-relative overflow-hidden">
-            <img src="{{ asset('img/ekstrakulikuler/' . $item->firstCarousel    ->gambar) }}" alt="{{ $item->nama }}" class="img-fluid"
+            <img src="{{ asset('img/ekstrakulikuler/' . $item->firstCarousel->gambar) }}" alt="{{ $item->nama }}" class="img-fluid"
                 style="height: 220px; width: 100%; object-fit: cover;">
             <a href="{{ url('/detail/' . $item->id . '/ekstrakurikuler') }}"
                 class="icon-link d-flex align-items-center justify-content-center">

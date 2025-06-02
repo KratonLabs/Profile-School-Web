@@ -487,41 +487,78 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Pie Chart Custom 1
     // ------------------------------------------------------ //
-    var PIECHARTEXMPLE    = $('#pieChartCustom1');
-    var pieChartExample = new Chart(PIECHARTEXMPLE, {
-        type: 'pie',
-        options: {
-            legend: {
-                display: true,
-                position: "left"
-            }
-        },
-        data: {
-            labels: [
-                "A",
-                "B",
-                "C",
-                "D"
-            ],
-            datasets: [
-                {
-                    data: [300, 50, 100, 80],
-                    borderWidth: 0,
-                    backgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
-                    ],
-                    hoverBackgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
-                    ]
+    // var PIECHARTEXMPLE    = $('#pieChartCustom1');
+    // var pieChartExample = new Chart(PIECHARTEXMPLE, {
+    //     type: 'pie',
+    //     options: {
+    //         legend: {
+    //             display: true,
+    //             position: "left"
+    //         }
+    //     },
+    //     data: {
+    //         labels: [
+    //             "A",
+    //             "B",
+    //             "C",
+    //             "D"
+    //         ],
+    //         datasets: [
+    //             {
+    //                 data: [300, 50, 100, 80],
+    //                 borderWidth: 0,
+    //                 backgroundColor: [
+    //                     '#723ac3',
+    //                     "#864DD9",
+    //                     "#9762e6",
+    //                     "#a678eb"
+    //                 ],
+    //                 hoverBackgroundColor: [
+    //                     '#723ac3',
+    //                     "#864DD9",
+    //                     "#9762e6",
+    //                     "#a678eb"
+    //                 ]
+    //             }]
+    //         }
+    // });
+
+    var jumlahGuru = window.jumlahGuru || 0;
+    var jumlahStaff = window.jumlahStaff || 0;
+
+    var ctx = document.getElementById('pieChartPerbandinganGurudanStaff');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    "Guru",
+                    "Staff"
+                ],
+                datasets: [{
+                    data: [jumlahGuru, jumlahStaff],
+                    backgroundColor: ['#eb564b', '#faa8a2'],
+                    hoverBackgroundColor: ['#eb564b', '#faa8a2'],
+                    borderWidth: 0
                 }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: "left"
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            const label = data.labels[tooltipItem.index] || '';
+                            const value = data.datasets[0].data[tooltipItem.index];
+                            return `${label}: ${value}`;
+                        }
+                    }
+                }
             }
-    });
+        });
+    }
 
     var pieChartExample = {
         responsive: true
@@ -532,42 +569,86 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Doughnut Chart Custom
     // ------------------------------------------------------ //
-    var PIECHART = $('#doughnutChartCustom1');
-    var myPieChart = new Chart(PIECHART, {
-        type: 'doughnut',
-        options: {
-            cutoutPercentage: 80,
-            legend: {
-                display: true,
-                position: "left"
-            }
-        },
-        data: {
-            labels: [
-                "A",
-                "B",
-                "C",
-                "D"
-            ],
-            datasets: [
-                {
-                    data: [120, 90, 77, 95],
-                    borderWidth: [0, 0, 0, 0],
+    // var PIECHART = $('#doughnutChartCustom1');
+    // var myPieChart = new Chart(PIECHART, {
+    //     type: 'doughnut',
+    //     options: {
+    //         cutoutPercentage: 80,
+    //         legend: {
+    //             display: true,
+    //             position: "left"
+    //         }
+    //     },
+    //     data: {
+    //         labels: [
+    //             "A",
+    //             "B",
+    //             "C",
+    //             "D"
+    //         ],
+    //         datasets: [
+    //             {
+    //                 data: [120, 90, 77, 95],
+    //                 borderWidth: [0, 0, 0, 0],
+    //                 backgroundColor: [
+    //                     '#b53dde',
+    //                     "#CF53F9",
+    //                     "#d06cf2",
+    //                     "#de97f6"
+    //                 ],
+    //                 hoverBackgroundColor: [
+    //                     '#b53dde',
+    //                     "#CF53F9",
+    //                     "#d06cf2",
+    //                     "#de97f6"
+    //                 ]
+    //             }]
+    //     }
+    // });
+
+    var kategoriLabels = window.kategoriLabels || [];
+    var kategoriData = window.kategoriData || [];
+
+    var PIECHART = document.getElementById('doughnutChartKategoriBeritaTerpopuler');
+        if (PIECHART) {
+        new Chart(PIECHART, {
+            type: 'doughnut',
+            data: {
+                labels: kategoriLabels,
+                datasets: [{
+                    data: kategoriData,
+                    borderWidth: 0,
                     backgroundColor: [
-                        '#b53dde',
-                        "#CF53F9",
-                        "#d06cf2",
-                        "#de97f6"
+                        '#faf55f',
+                        "#ed53e0",
+                        "#ed537f",
                     ],
                     hoverBackgroundColor: [
-                        '#b53dde',
-                        "#CF53F9",
-                        "#d06cf2",
-                        "#de97f6"
+                        '#faf55f',
+                        "#ed53e0",
+                        "#ed537f",
                     ]
                 }]
-        }
-    });
+            },
+            options: {
+                cutoutPercentage: 80,
+                legend: {
+                    display: true,
+                    position: "left"
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            const label = data.labels[tooltipItem.index] || '';
+                            const value = data.datasets[0].data[tooltipItem.index];
+                            return `${label} : ${value}x dilihat`;
+                        }
+                    }
+                }
+            }
+
+        });
+    }
 
 
 

@@ -50,7 +50,7 @@
     <script src="{{asset('admin/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
     <script src="{{asset('admin/vendor/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('admin/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('admin/js/charts-home.js')}}"></script>
+    <script src="{{asset('admin/js/charts-custom.js')}}"></script>
     <script src="{{asset('admin/js/front.js')}}"></script>
     <script src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 
