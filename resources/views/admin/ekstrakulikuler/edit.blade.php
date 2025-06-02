@@ -95,22 +95,6 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-3 form-control-label h6">Gambar</label>
-                                    <div class="col-sm-9">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="gambar" id="inputGambar">
-                                            <label class="custom-file-label form-control @error('gambar') is-invalid @enderror" for="inputGambar">Pilih Gambar</label>
-                                        </div>
-                                        @error('gambar')<small class="text-danger">{{ $message }}</small>@enderror
-                                        @if ($data->gambar)
-                                        <a type="button" data-toggle="modal" data-target="#myPicture{{ $data->id }}"
-                                            class="btn btn-lg btn-warning h6 mt-2"><i class="fa fa-trash"></i> Lihat Gambar saat ini</a>
-                                            @include('admin.ekstrakulikuler.showpicture')
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
                                     <label class="col-sm-3 form-control-label h6">Logo</label>
                                     <div class="col-sm-9">
                                         <div class="custom-file">

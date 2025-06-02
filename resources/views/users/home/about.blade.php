@@ -12,21 +12,14 @@
         <div class="row gy-4">
 
             <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-muted">Visi kami adalah membentuk generasi yang unggul dalam pengetahuan,
-                    karakter, dan keimanan dengan mengedepankan pembelajaran yang aktif dan berakhlak.</p>
-                <ul>
-                    <li><i class="bi bi-check2-circle"></i> <span>Mengembangkan pendidikan berbasis nilai-nilai
-                        keagamaan dan budaya lokal.</span></li>
-                <li><i class="bi bi-check2-circle"></i> <span>Mendorong siswa menjadi pribadi yang mandiri, kreatif,
-                        dan bertanggung jawab.</span></li>
-                <li><i class="bi bi-check2-circle"></i> <span>Mewujudkan pembelajaran yang menyenangkan dan aktif
-                        partisipatif.</span></li>
-                </ul>
+                <p>"Visi kami adalah membentuk generasi yang unggul dalam pengetahuan,
+                    karakter, dan keimanan dengan mengedepankan pembelajaran yang aktif dan berakhlak."
+                </p>
             </div>
 
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                <img src="{{ asset('/selecao/assets/img/masonry-portfolio/masonry-portfolio-3.jpg') }}"
-                    alt="Visi dan Misi Sekolah" class="img-fluid rounded shadow mb-3">
+                <img src="{{ asset('img/osis.jpg') }}" alt="Visi dan Misi Sekolah"
+                    class="img-fluid rounded shadow mb-3">
             </div>
 
         </div>
@@ -44,8 +37,7 @@
 
             <!-- Gambar di sebelah kiri -->
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('/selecao/assets/img/masonry-portfolio/masonry-portfolio-4.jpg') }}"
-                    alt="Misi Sekolah" class="img-fluid rounded shadow mb-3">
+                <img src="{{ asset('img/BA2.jpg') }}" alt="Misi Sekolah" class="img-fluid rounded shadow mb-3">
             </div>
 
             <!-- Teks di sebelah kanan -->
@@ -58,16 +50,16 @@
                 </div>
 
                 <!-- Isi Misi -->
-                <p class="text-muted">Misi sekolah kami adalah mengimplementasikan nilai-nilai pendidikan berbasis
-                    karakter, membangun lingkungan belajar yang inklusif dan kolaboratif, serta menumbuhkan semangat
-                    kreativitas dan inovasi bagi peserta didik.</p>
                 <ul>
-                    <li><i class="bi bi-check2-circle"></i> <span>Mengembangkan pendidikan berbasis nilai-nilai
-                            keagamaan dan budaya lokal.</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Mendorong siswa menjadi pribadi yang mandiri, kreatif,
-                            dan bertanggung jawab.</span></li>
-                    <li><i class="bi bi-check2-circle"></i> <span>Mewujudkan pembelajaran yang menyenangkan dan aktif
-                            partisipatif.</span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Mampu menunjang kesetaraan akademik, baik dalam ilmu
+                            pengetahuan alam maupun sosial.
+                        </span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Mencapai mutu pendidikan siswa-siswi sesuai perangkat
+                            kurikulum 2013.
+                        </span></li>
+                    <li><i class="bi bi-check2-circle"></i> <span>Mengikutsertakan guru-guru dalam penataran-penataran
+                            sesuai dengan bidang studi yang mereka ajarkan.
+                        </span></li>
                 </ul>
 
             </div>

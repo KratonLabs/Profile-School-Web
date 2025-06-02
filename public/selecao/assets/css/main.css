@@ -193,6 +193,18 @@ h6 {
   --background-color: rgba(8, 8, 8, 0.9);
 }
 
+blockquote::-webkit-scrollbar {
+    width: 6px;
+}
+blockquote::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+blockquote::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 3px;
+}
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/

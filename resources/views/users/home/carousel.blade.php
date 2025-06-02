@@ -5,7 +5,7 @@
         data-bs-interval="5000">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url('{{ asset('/gp/assets/img/hero-bg.jpg') }}');">
+        <div class="carousel-item active" style="background-image: url('{{ asset('img/carousel/caraousel1.jpg') }}');">
             <div class="carousel-container">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Selecao</span></h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid...</p>
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url('{{ asset('selecao/assets/img/working-4.jpg') }}');">
+        <div class="carousel-item" style="background-image: url('{{ asset('img/carousel/carousel6.jpg') }}');">
             <div class="carousel-container">
                 <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid...</p>
@@ -21,7 +21,23 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url('{{ asset('selecao/assets/img/working-3.jpg') }}');">
+        <div class="carousel-item" style="background-image: url('{{ asset('img/carousel/carousel3.jpg') }}');">
+            <div class="carousel-container">
+                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid...</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item" style="background-image: url('{{ asset('img/carousel/carousel5.jpg') }}');">
+            <div class="carousel-container">
+                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid...</p>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-item" style="background-image: url('{{ asset('img/carousel/carousel6.jpg') }}');">
             <div class="carousel-container">
                 <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid...</p>

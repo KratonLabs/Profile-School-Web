@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('nama_ig')->nullable();
             $table->string('alamat_ig')->nullable();
             $table->integer('jumlah_anggota')->default(0);
-            $table->string('gambar');
             $table->string('logo')->nullable()->default('logo_sma.png');
             $table->timestamps();
 

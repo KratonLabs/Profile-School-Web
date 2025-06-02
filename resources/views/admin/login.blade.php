@@ -2,6 +2,7 @@
 @section('contentLogin')
     <style>
         .swiper-slide {
+            background-image: url('/img/carousel/caraousel1.jpg');
             display: flex;
             align-items: center;
             justify-content: center;
@@ -9,9 +10,8 @@
             font-weight: bold;
             color: #fff;
         }
-
         .swiper-slide:nth-child(1n) {
-            background-image: url('/img/jurusan/Ilmu Pengetahuan Alam.jpeg');
+            background-image: url('/img/carousel/caraousel1.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -19,7 +19,7 @@
         }
 
         .swiper-slide:nth-child(2n) {
-            background-image: url('/img/jurusan/Ilmu Pengetahuan Sosial.jpg');
+            background-image: url('/img/carousel/carousel2.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -27,7 +27,14 @@
         }
 
         .swiper-slide:nth-child(3n) {
-            background-image: url('/img/jurusan/Matematika dan Komputer.jpg');
+            background-image: url('/img/carousel/carousel3.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-slide.swiper-slide:nth-child(2n) {
+            background-image: url('/img/carousel/carousel4.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -60,27 +67,27 @@
                                 <div class="overlay"></div>
                                 <div class="content p-5 text-white relative z-10">
                                     <div class="logo">
-                                        <h1>Dashboard1</h1>
+                                        <h1>Dashboard Admin</h1>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p> SMA Daan Mogot Tangerang</p>
                                 </div>
                             </div>
                             <div class="swiper-slide slide-with-bg">
                                 <div class="overlay"></div>
                                 <div class="content p-5 text-white relative z-10">
                                     <div class="logo">
-                                        <h1>Dashboard2</h1>
+                                        <h1>Dashboard Admin</h1>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p> SMA Daan Mogot Tangerang </p>
                                 </div>
                             </div>
                             <div class="swiper-slide slide-with-bg">
                                 <div class="overlay"></div>
                                 <div class="content p-5 text-white relative z-10">
                                     <div class="logo">
-                                        <h1>Dashboard3</h1>
+                                        <h1>Dashboard Admin</h1>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p> SMA Daan Mogot Tangerang </p>
                                 </div>
                             </div>
                         </div>
@@ -119,6 +126,7 @@
             </div>
         </div>
     </div>
+
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
         var swiper = new Swiper(".mySwiper", {

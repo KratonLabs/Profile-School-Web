@@ -17,12 +17,21 @@ class Ekstrakurikuler extends Model
         'nama_ig',
         'alamat_ig',
         'jumlah_anggota',
-        'gambar',
         'logo'
     ];
 
     public function pegawai()
     {
         return $this->belongsTo(Pegawai::class);
+    }
+
+    public function eskulcarousel()
+    {
+        return $this->hasMany(CarouselEskul::class);
+    }
+
+    public function firstCarousel()
+    {
+        return $this->hasOne(CarouselEskul::class, 'eskul_id')->latest();
     }
 }

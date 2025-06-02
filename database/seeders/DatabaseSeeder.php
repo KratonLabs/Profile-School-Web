@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             EkstrakulikulerSeeder::class,
             FasilitasSeeder::class,
             BeritaSeeder::class,
+            CarouselEskulSeeder::class,
         ]);
     }
 }

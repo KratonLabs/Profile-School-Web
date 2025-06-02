@@ -4,7 +4,7 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" style="background: url('/gp/assets/img/hero-bg.jpg') center center/cover no-repeat; z-index: 1;">
+    <div class="page-title dark-background" style="background: url('/img/osis.jpg') center center/cover no-repeat; z-index: 1;">
         <div class="section-title" data-aos="fade-up">
             <h2>Kesiswaan</h2>
             <p>Organisasi Intra Sekolah</p>
@@ -40,19 +40,19 @@
             <div class="swiper-wrapper align-items-center">
   
               <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/app-1.jpg" alt="">
+                <img src="/img/osis.jpg" alt="">
+              </div>
+  
+              <div class="swiper-slide">  
+                <img src="/img/osis/2.jpg" alt="">
               </div>
   
               <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/product-1.jpg" alt="">
+                <img src="/img/osis/4.jpg" alt="">
               </div>
   
               <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/branding-1.jpg" alt="">
-              </div>
-  
-              <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/books-1.jpg" alt="">
+                <img src="/img/osis/6.jpg" alt="">
               </div>
   
             </div>

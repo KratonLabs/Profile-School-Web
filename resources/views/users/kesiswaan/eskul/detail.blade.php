@@ -4,7 +4,7 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background">
+    <div class="page-title dark-background" style="background: url('/img/osis.jpg') center center/cover no-repeat; z-index: 1;">
         <div class="section-title" data-aos="fade-up">
             <h2>Ekstrakulikuler</h2>
             <p>{{ $data->nama }}</p>
@@ -37,24 +37,15 @@
                 }
               }
             </script>
+
             <div class="swiper-wrapper align-items-center">
-  
+
+              @foreach ($carousel as $carousels )   
               <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/app-1.jpg" alt="">
+                <img src="{{ asset('img/ekstrakulikuler/'. $carousels->gambar) }}" alt="">
               </div>
-  
-              <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/product-1.jpg" alt="">
-              </div>
-  
-              <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/branding-1.jpg" alt="">
-              </div>
-  
-              <div class="swiper-slide">
-                <img src="/selecao/assets/img/portfolio/books-1.jpg" alt="">
-              </div>
-  
+              @endforeach
+
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>

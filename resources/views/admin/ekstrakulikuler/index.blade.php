@@ -93,13 +93,13 @@
                     @foreach ($ekstrakulikuler as $item)
                         <div class="col-lg-4">
                             <div class="user-block block text-center">
-                                <div class="img-wrapper" onclick="openPopup('{{ asset('img/ekstrakulikuler/' . $item->gambar) }}')">
-                                    <img src="{{ asset('img/ekstrakulikuler/' . $item->gambar) }}" alt="..." class="img-fluid"
+                                <div class="img-wrapper" onclick="openPopup('{{ asset('img/ekstrakulikuler/' . $item->firstCarousel->gambar) }}')">
+                                    <img src="{{ asset('img/ekstrakulikuler/' . $item->firstCarousel->gambar) }}" alt="..." class="img-fluid"
                                         style="width: 2500px; height: 150px; object-fit: cover;">
                                     
                                     <div class="overlay-btns">
                                         <!-- Tombol "+" -->
-                                        <button type="button" onclick="event.stopPropagation(); openPopup('{{ asset('img/ekstrakulikuler/' . $item->gambar) }}')" title="Lihat besar">+</button>
+                                        <button type="button" onclick="event.stopPropagation(); openPopup('{{ asset('img/ekstrakulikuler/' . $item->firstCarousel->gambar) }}" title="Lihat besar">+</button>
                                 
                                         <!-- Tombol "Logo" -->
                                         <button type="button" onclick="event.stopPropagation(); openPopup('{{ asset('img/ekstrakulikuler/logo/' . $item->logo) }}')" title="Logo">Logo</button>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CarouselEskulController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\JurusanController;
@@ -38,19 +39,19 @@ Route::get('/galery', function () {
     return view('users.sekolah.profile-sekolah.galery');
 });
 
-Route::get('/program', function () {
-    return view('users.sekolah.profile-sekolah.programsekolah');
-});
 
 Route::get('/jadwal-kbm', function () {
     return view('users.sekolah.kurikulum.jadwalpelajaran');
 });
+
 Route::get('/kalender-akademik', function () {
     return view('users.sekolah.kurikulum.kalender');
 });
 Route::get('/peraturan-sekolah', function () {
     return view('users.sekolah.kurikulum.peraturan');
 });
+
+
 //--Profil Sekolah--
 
 //Guru
@@ -114,8 +115,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/pegawai', PegawaiController::class)->names('pegawai');
     Route::resource('/jurusan', JurusanController::class)->names('jurusan');
     Route::resource('/ekstrakulikuler', EkstrakurikulerController::class)->names('ekstrakulikuler');
+    Route::resource('/carouselekstrakulikuler', CarouselEskulController::class)->names('carouselekstrakulikuler');
     Route::resource('/fasilitas', FasilitasController::class)->names('fasilitas');
     Route::resource('/berita', BeritaController::class)->names('berita');
     Route::resource('/feedback', FeedbackController::class)->names('feedback');
-});
-
+}); 

@@ -1,5 +1,5 @@
 <!-- Section Statistik -->
-<section id="statistics" class="statistics mt-5 section text-white position-relative" style="background: url('/gp/assets/img/features-bg.jpg') center center/cover no-repeat; z-index: 1;">
+<section id="statistics" class="statistics mt-5 section text-white position-relative" style="background: url('/img/statistic.jpg') center center/cover no-repeat; z-index: 1;">
 
   <!-- Overlay -->
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 2;"></div>
@@ -16,7 +16,7 @@
           <div class="icon mb-2 display-3 hover-icon">
             <i class="bi bi-mortarboard-fill"></i>
           </div>
-          <h4><strong class="counter text-white" data-target="477">0</strong></h4>
+          <h4><strong class="counter text-white" data-target="238">0</strong></h4>
           <p>Siswa Aktif</p>
         </div>
       </div>
@@ -26,7 +26,7 @@
           <div class="icon mb-2 display-3 hover-icon">
             <i class="bi bi-person-vcard-fill"></i>
           </div>
-          <h4><strong class="counter text-white" data-target="239">0</strong></h4>
+          <h4><strong class="counter text-white" data-target="70">0</strong></h4>
           <p>Jumlah Guru</p>
         </div>
       </div>
@@ -36,7 +36,7 @@
           <div class="icon mb-2 display-3 hover-icon">
             <i class="bi bi-building-fill"></i>
           </div>
-          <h4><strong class="counter text-white" data-target="300">0</strong></h4>
+          <h4><strong class="counter text-white" data-target="7">0</strong></h4>
           <p>Total Kelas</p>  
         </div>
       </div>
@@ -46,7 +46,7 @@
           <div class="icon mb-2 display-3 hover-icon">
             <i class="bi bi-trophy-fill"></i>
           </div>
-          <h4><strong class="counter text-white" data-target="439">0</strong></h4>
+          <h4><strong class="counter text-white" data-target="50">0</strong></h4>
           <p>Prestasi</p>
         </div>
       </div>

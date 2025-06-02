@@ -18,19 +18,9 @@
                     </div>
                     <div class="content">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua.
+                            “Menjadikan siswa-siswi yang cerdas, kreatif dan bertaqkwa kepada Tuhan Yang Maha Esa”
                         </p>
-                        <ul>
-                            <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</span></li>
-                            <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in
-                                    voluptate
-                                    velit.</span></li>
-                            <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                    commodo</span></li>
-                        </ul>
+
                     </div>
                 </div>
 
@@ -40,15 +30,29 @@
                         <h2>SMA Daan Mogot Kota Tangerang</h2>
                         <p>Misi</p>
                     </div>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p class="text-muted">
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
+                    <ul>
+                        <li><i class="bi bi-check2-circle"></i> <span>Mampu  menunjang kesetaraan akademik, baik dalam ilmu pengetahuan alam maupun sosial.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Mencapai mutu pendidikan siswa-siswi sesuai perangkat kurikulum 2013.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Mengikutsertakan guru-guru dalam penataran-penataran sesuai dengan bidang studi yang mereka ajarkan.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Mengikutsertakan siswa-siswi dalam lomba-lomba IPTEK.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Melaksanakan kegiatan rutin keagamaan.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Menciptakan lingkungan sekolah yang bersih dan nyaman.
+                            </span>
+                        </li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Menciptakan lingkungan sekolah yang harmonis.
+                            </span>
+                        </li>
+                    </ul>
                     {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
                 </div>
 

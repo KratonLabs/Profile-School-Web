@@ -24,7 +24,9 @@
                     <a href="service-details.html" class="stretched-link">
                         <h3>Lokasi</h3>
                     </a>
-                    <p>Jl. Gatot Subroto, RT.003/RW.003, Sangiang Jaya, Kec. Periuk, Kota Tangerang, Banten 15138</p>
+                    <h5>Jl. Gatot Subroto Km.5 Jatiuwung
+                        Kec.Cibodas Kota Tangerang 
+                    </h5>
                 </div>
             </div><!-- End Service Item -->
 
@@ -36,7 +38,7 @@
                     <a href="service-details.html" class="stretched-link">
                         <h3>Email</h3>
                     </a>
-                    <h5>smadaanmogot@gmail.com</h5>
+                    <h5>sma.daanmogot@gmail.com</h5>
                 </div>
             </div><!-- End Service Item -->
 
@@ -48,7 +50,10 @@
                     <a href="service-details.html" class="stretched-link">
                         <h3>Telepon</h3>
                     </a>
-                    <h5>021-5980576</h5>
+                    <ul>
+                        <li><h5>Mela Nurhikayah : 08561052793</h5></li>
+                        <li><h5>Ismail qurba : 081280698269</h5></li>
+                    </ul>
                 </div>
             </div><!-- End Service Item -->
 
@@ -73,7 +78,6 @@
                         <h3>Youtube</h3>
                     </a>
                     <h5>smadaanmogot</h5>
-                    <p>Cumque et suscipit saepe</p>
                 </div>
             </div><!-- End Service Item -->
 

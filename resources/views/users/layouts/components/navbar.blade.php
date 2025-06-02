@@ -7,7 +7,6 @@
           <ul>
             <li><a href="/sejarah">Sejarah</a></li>
             <li><a href="/visi-misi">Visi dan Misi</a></li>
-            <li><a href="/program">Program dan Sasaran</a></li>
             <li><a href="/struktur-organisasi">Struktur Kepengurusan</a></li>
             <li><a href="/galery">Gallery Sekolah</a></li>
           </ul>

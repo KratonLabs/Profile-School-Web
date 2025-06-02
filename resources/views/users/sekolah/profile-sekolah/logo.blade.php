@@ -6,21 +6,85 @@
 </div><!-- End Section Title -->
 
 <div class="container">
-
     <div class="row gy-4">
-
-        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis provident,
-                rerum iusto harum explicabo alias vitae suscipit, blanditiis vel inventore voluptatem nisi nemo nihil
-                omnis saepe. Nesciunt fugit voluptatibus, natus atque sapiente sunt odit culpa at voluptate adipisci
-                corporis accusamus voluptatem maiores voluptas earum vero esse. Explicabo, dolorem? Architecto?</p>
+       <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
             <ul>
-                <li><i class="bi bi-check2-circle"></i> <span>Mengembangkan pendidikan berbasis nilai-nilai
-                        keagamaan dan budaya lokal.</span></li>
-                <li><i class="bi bi-check2-circle"></i> <span>Mendorong siswa menjadi pribadi yang mandiri, kreatif,
-                        dan bertanggung jawab.</span></li>
-                <li><i class="bi bi-check2-circle"></i> <span>Mewujudkan pembelajaran yang menyenangkan dan aktif
-                        partisipatif.</span></li>
+                <li><strong>Warna: </strong></li>
+
+                <li><i class="bi bi-check2-circle"></i>
+                    <span>
+                        Merah: Keberanian, kekuatan, energi, dan semangat
+                    </span>
+                </li>
+                <li><i class="bi bi-check2-circle"></i>
+                    <span>
+                        Putih: Bersih, menggambarkan cita-cita untuk selalu beritikad baik penuh kejujuran, dan kesucian
+                    </span>
+                </li>
+                <li><i class="bi bi-check2-circle"></i>
+                    <span>
+                        Kuning : Energi dan optimis
+                    </span>
+                </li>
+                <li><i class="bi bi-check2-circle"></i>
+                    <span>
+                        Hitam : Kekuatan dan keteguhan
+                    </span>
+                </li>
+            </ul>
+
+            <ul>
+                <li><strong>Bentuk/Ornamen:</strong></li>
+                <div class="item-list">  
+                    <div class="item-content">
+                        <i class="bi bi-check2-circle item-icon"></i>
+                        <span class="item-title">Padi dan Kapas:</span>
+                        <div>
+                            <span class="item-description">
+                                Menunjukkan cita-cita terpenuhinya kebutuhan sandang atau pangan dan kebutuhan sekunder
+                                lainnya secara merata setiap masyarakat, atau istilah lainnya masyarakat di lingkungan SMAS
+                                Daan Mogot yang bahagia, makmur, dan sejahtera.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-list">
+                    <div class="item-content">
+                        <i class="bi bi-check2-circle item-icon"></i>
+                        <span class="item-title">Bingkai Segi Lima:</span>
+                        <div>
+                            <span class="item-description">
+                                Menggambarkan keteguhan dalam memegang dan menanamkan Pancasila sebagai falsafah masyarakat
+                                di lingkungan SMAS Daan Mogot.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-list">
+                    <div class="item-content">
+                        <i class="bi bi-check2-circle item-icon"></i>
+                        <span class="item-title">Bata Merah:</span>
+                        <div>
+                            <span class="item-description">
+                                Melambangkan pondasi yang kuat untuk melindungi dan memberikan rasa aman untuk seluruh
+                                masyarakat di lingkungan sekolah SMAS Daan Mogot.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-list">
+                    <div class="item-content">
+                        <i class="bi bi-check2-circle item-icon"></i>
+                        <span class="item-title">Tulisan Daan Mogot:</span>
+                        <div>
+                            <span class="item-description">
+                                Merupakan bentuk penghormatan terhadap Elias Daniel Mogot atau yang lebih dikenal
+                                sebagai Daan Mogot merupakan Pahlawan Nasional yang telah berjasa dalam pertempuran
+                                mengusir tentara Jepang di wilayah Kota Tangerang/Tangerang Selatan.
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </ul>
         </div>
 

@@ -62,7 +62,7 @@
   <script src="{{ asset('gp/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('gp/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
   <script src="{{ asset('gp/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-  <script src="{{ asset('gp/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('gp/assets/vendor/isotope-layout/isot ope.pkgd.min.js') }}"></script>
   <script src="{{ asset('gp/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
 
   <!-- Main JS File -->

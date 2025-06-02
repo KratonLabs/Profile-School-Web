@@ -4,12 +4,6 @@
         <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">Ekstrakulikuler</h2>
         </div>
-    </div>
-    <div class="container-fluid m-0">
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-            <li class="breadcrumb-item active">Ekstrakulikuler</li>
-    </div>
     <section class="no-padding-top">
         <div class="container-fluid">
             <div class="row">
@@ -170,5 +164,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>   
+ </div>
+    <div class="container-fluid m-0">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Ekstrakulikuler</li>
+    </div>
+
 @endsection
